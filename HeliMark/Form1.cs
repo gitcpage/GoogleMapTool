@@ -662,5 +662,15 @@ namespace HeliMark
     {
       Form1_Load(null, null);
     }
+
+    private void btnGitHubを開く_Click(object sender, EventArgs e)
+    {
+      System.Diagnostics.Process.Start("https://github.com/gitcpage/GoogleMapTool/tree/main/HeliMark");
+    }
+
+    private void chk1ha毎に線を引く_CheckedChanged(object sender, EventArgs e)
+    {
+      Flags.is1ha毎に線を引く = this.chk1ha毎に線を引く.Checked;
+    }
   }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Windows.Forms;
+using System.Drawing; // for Point
 
 namespace HeliMark
 {
@@ -27,6 +28,11 @@ namespace HeliMark
     public int ckind;//0:red, 1:blue, 2:yellow
     public int enable;
     public string disp;
+
+    // ImageCtrl.PaintMark() で使用される同一ライン判定。IsSameLine()で使用。
+    public static int s_beforeId = 1000000;
+    // ImageCtrl.PaintMark() で使用される8ha毎に引くまでの面積。
+    public static double s_areaHa;
     public Data()
     {
       id = 0;
@@ -34,6 +40,49 @@ namespace HeliMark
       lng = 0;
       width = 0;
     }
+    public static void Init8HaLine()
+    {
+      s_beforeId = 1000000;
+    }
+    public Point[] Point2HaLines(Point[] curvePoints)
+    {
+      if (id / 100 != s_beforeId / 100)
+      {
+        s_beforeId = id;
+        s_areaHa = 0;
+      }
+      s_beforeId = id;
+
+      double area = width * height;
+      const double quantum8ha = 80 / 2.55;
+      s_areaHa += area;
+      Point[] ret = { };
+      Point e1 = curvePoints[0];
+      Point s1 = curvePoints[1];
+      Point e2 = curvePoints[3];
+      Point s2 = curvePoints[2];
+      while (s_areaHa > quantum8ha)
+      {
+        s_areaHa -= quantum8ha;
+        int retIndex = ret.Length;
+        Array.Resize(ref ret, ret.Length + 2);
+        double ar = s_areaHa / area;
+        Point s = new Point((int)((double)s1.X*ar)+ (int)((double)e1.X * (1.0-ar)),
+          (int)((double)s1.Y * ar) + (int)((double)e1.Y * (1.0 - ar)));
+        Point e = new Point((int)((double)s2.X * ar) + (int)((double)e2.X * (1.0 - ar)),
+          (int)((double)s2.Y * ar) + (int)((double)e2.Y * (1.0 - ar)));
+        ret[retIndex++] = s;
+        ret[retIndex++] = e;
+
+        //開始ラインチェック
+        //Array.Resize(ref ret, ret.Length + 2);
+        //ret[retIndex++] = s1;
+        //ret[retIndex++] = s2;
+      }
+      return ret;
+    }
+
+
     public static void PrintDataGridView(Data[] src, DataGridView dgv)
     {
       dgv.Rows.Clear();

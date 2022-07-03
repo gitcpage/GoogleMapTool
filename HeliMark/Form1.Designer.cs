@@ -32,6 +32,7 @@ namespace HeliMark
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.tabPageメイン = new System.Windows.Forms.TabPage();
+      this.btnGitHubを開く = new System.Windows.Forms.Button();
       this.txtDatatxt再度読込 = new System.Windows.Forms.Button();
       this.chk地図に地区時刻表示 = new System.Windows.Forms.CheckBox();
       this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -107,6 +108,7 @@ namespace HeliMark
       this.tabPageExcelから取得 = new System.Windows.Forms.TabPage();
       this.btn入力クリア = new System.Windows.Forms.Button();
       this.chkつや姫エサ米を無効 = new System.Windows.Forms.CheckBox();
+      this.chk置換処理を行う = new System.Windows.Forms.CheckBox();
       this.chk取得処理で全て処理する = new System.Windows.Forms.CheckBox();
       this.btn申込を保存する = new System.Windows.Forms.Button();
       this.btn申込全てクリア = new System.Windows.Forms.Button();
@@ -133,7 +135,7 @@ namespace HeliMark
       this.label10 = new System.Windows.Forms.Label();
       this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
       this.printDialog1 = new System.Windows.Forms.PrintDialog();
-      this.chk置換処理を行う = new System.Windows.Forms.CheckBox();
+      this.chk1ha毎に線を引く = new System.Windows.Forms.CheckBox();
       this.tabControl1.SuspendLayout();
       this.tabPageメイン.SuspendLayout();
       this.groupBox2.SuspendLayout();
@@ -169,6 +171,8 @@ namespace HeliMark
       // 
       // tabPageメイン
       // 
+      this.tabPageメイン.Controls.Add(this.chk1ha毎に線を引く);
+      this.tabPageメイン.Controls.Add(this.btnGitHubを開く);
       this.tabPageメイン.Controls.Add(this.txtDatatxt再度読込);
       this.tabPageメイン.Controls.Add(this.chk地図に地区時刻表示);
       this.tabPageメイン.Controls.Add(this.groupBox2);
@@ -184,6 +188,16 @@ namespace HeliMark
       this.tabPageメイン.TabIndex = 0;
       this.tabPageメイン.Text = "メイン";
       this.tabPageメイン.UseVisualStyleBackColor = true;
+      // 
+      // btnGitHubを開く
+      // 
+      this.btnGitHubを開く.Location = new System.Drawing.Point(222, 180);
+      this.btnGitHubを開く.Name = "btnGitHubを開く";
+      this.btnGitHubを開く.Size = new System.Drawing.Size(100, 33);
+      this.btnGitHubを開く.TabIndex = 10;
+      this.btnGitHubを開く.Text = "GitHubを開く";
+      this.btnGitHubを開く.UseVisualStyleBackColor = true;
+      this.btnGitHubを開く.Click += new System.EventHandler(this.btnGitHubを開く_Click);
       // 
       // txtDatatxt再度読込
       // 
@@ -915,6 +929,18 @@ namespace HeliMark
       this.chkつや姫エサ米を無効.UseVisualStyleBackColor = true;
       this.chkつや姫エサ米を無効.CheckedChanged += new System.EventHandler(this.chk取得処理で全て処理する_CheckedChanged);
       // 
+      // chk置換処理を行う
+      // 
+      this.chk置換処理を行う.AutoSize = true;
+      this.chk置換処理を行う.Checked = true;
+      this.chk置換処理を行う.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.chk置換処理を行う.Location = new System.Drawing.Point(574, 190);
+      this.chk置換処理を行う.Name = "chk置換処理を行う";
+      this.chk置換処理を行う.Size = new System.Drawing.Size(100, 16);
+      this.chk置換処理を行う.TabIndex = 6;
+      this.chk置換処理を行う.Text = "置換処理を行う";
+      this.chk置換処理を行う.UseVisualStyleBackColor = true;
+      // 
       // chk取得処理で全て処理する
       // 
       this.chk取得処理で全て処理する.AutoSize = true;
@@ -1146,23 +1172,24 @@ namespace HeliMark
       this.label10.Name = "label10";
       this.label10.Size = new System.Drawing.Size(122, 12);
       this.label10.TabIndex = 3;
-      this.label10.Text = "Version 2.7(2022.06.13)";
+      this.label10.Text = "Version 2.8(2022.06.19)";
       // 
       // printDialog1
       // 
       this.printDialog1.UseEXDialog = true;
       // 
-      // chk置換処理を行う
+      // chk1ha毎に線を引く
       // 
-      this.chk置換処理を行う.AutoSize = true;
-      this.chk置換処理を行う.Checked = true;
-      this.chk置換処理を行う.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.chk置換処理を行う.Location = new System.Drawing.Point(574, 190);
-      this.chk置換処理を行う.Name = "chk置換処理を行う";
-      this.chk置換処理を行う.Size = new System.Drawing.Size(100, 16);
-      this.chk置換処理を行う.TabIndex = 6;
-      this.chk置換処理を行う.Text = "置換処理を行う";
-      this.chk置換処理を行う.UseVisualStyleBackColor = true;
+      this.chk1ha毎に線を引く.AutoSize = true;
+      this.chk1ha毎に線を引く.Checked = true;
+      this.chk1ha毎に線を引く.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.chk1ha毎に線を引く.Location = new System.Drawing.Point(518, 175);
+      this.chk1ha毎に線を引く.Name = "chk1ha毎に線を引く";
+      this.chk1ha毎に線を引く.Size = new System.Drawing.Size(110, 16);
+      this.chk1ha毎に線を引く.TabIndex = 11;
+      this.chk1ha毎に線を引く.Text = "1 ha 毎に線を引く";
+      this.chk1ha毎に線を引く.UseVisualStyleBackColor = true;
+      this.chk1ha毎に線を引く.CheckedChanged += new System.EventHandler(this.chk1ha毎に線を引く_CheckedChanged);
       // 
       // Form1
       // 
@@ -1316,6 +1343,8 @@ namespace HeliMark
     private System.Windows.Forms.Button txtDatatxt再度読込;
     private System.Windows.Forms.CheckBox chkつや姫エサ米を無効;
     private System.Windows.Forms.CheckBox chk置換処理を行う;
+    private System.Windows.Forms.Button btnGitHubを開く;
+    private System.Windows.Forms.CheckBox chk1ha毎に線を引く;
   }
 }
 

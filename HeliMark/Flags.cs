@@ -24,5 +24,6 @@ namespace HeliMark
     public static bool isTextoutDispChiban = true;
 
     public static bool is地図に地区時刻表示 = true;
+    public static bool is1ha毎に線を引く = true;
   }
 }

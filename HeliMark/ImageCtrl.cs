@@ -14,7 +14,7 @@ namespace HeliMark
     int m_width, m_height;
 
     SolidBrush m_redBrush, m_blueBrush, m_yellowBrush, m_greenBrush, m_whiteBrush;
-    Pen m_redPen, m_bluePen, m_yellowPen, m_greenPen, m_blackPen;
+    Pen m_redPen, m_bluePen, m_yellowPen, m_greenPen, m_blackPen, m_haPen;
     SolidBrush m_strBrush;
     Font m_font;
     StringFormat m_strFmtCenter;
@@ -39,6 +39,8 @@ namespace HeliMark
       m_yellowPen = new Pen(Color.FromArgb(153, 255, 255, 50));
       m_greenPen = new Pen(Color.FromArgb(153, 0, 255, 0));
       m_blackPen = new Pen(Color.FromArgb(153, 0, 0, 0));
+
+      m_haPen = new Pen(Color.FromArgb(153, 255, 255, 255), 3.0f);
 
       m_strBrush = new SolidBrush(Color.Black);
       m_font = new Font("メイリオ", 10.0f);
@@ -129,6 +131,7 @@ namespace HeliMark
         r = 6.0;
       }
 
+      Data.Init8HaLine();
       foreach (Data d in kDataArray)
       {
         int oy = (int)(oY + (d.lat - oLat) * lenY / lenLat);
@@ -189,8 +192,17 @@ namespace HeliMark
               continue;
           }
         }
+        
         m_g.FillPolygon(brush, curvePoints);
         m_g.DrawPolygon(pen, curvePoints);
+        if (Flags.is1ha毎に線を引く)
+        {
+          Point[] haLines = d.Point2HaLines(curvePoints);
+          for (int i = 0; i < haLines.Length; i += 2)
+          {
+            m_g.DrawLine(m_haPen, haLines[i], haLines[i + 1]);
+          }
+        }
 
         // 地番表示の位置補正
         int y = oy;
