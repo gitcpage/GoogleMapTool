@@ -194,7 +194,6 @@ namespace HeliMark
         }
         
         m_g.FillPolygon(brush, curvePoints);
-        m_g.DrawPolygon(pen, curvePoints);
         if (Flags.is1ha毎に線を引く)
         {
           Point[] haLines = d.Point2HaLines(curvePoints);
@@ -203,6 +202,7 @@ namespace HeliMark
             m_g.DrawLine(m_haPen, haLines[i], haLines[i + 1]);
           }
         }
+        m_g.DrawPolygon(pen, curvePoints);
 
         // 地番表示の位置補正
         int y = oy;

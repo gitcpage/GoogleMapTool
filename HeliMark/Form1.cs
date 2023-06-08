@@ -30,12 +30,24 @@ namespace HeliMark
       chk塗りつぶしマーク(null, null);
     }
 
-    private string[] SplitByNewLine(string str)
+    private string[] SplitByNewLine(string str, bool doWarning = false)
     {
       string[] dem = new string[1];
       dem[0] = Environment.NewLine;
 
-      return str.Split(dem, StringSplitOptions.None);//RemoveEmptyEntries);
+      // 2023/06/07 空行があった場合に警告する。
+      if (!doWarning)
+        return str.Split(dem, StringSplitOptions.None);//RemoveEmptyEntries);
+      string[] strings = str.Split(dem, StringSplitOptions.None);
+      foreach (var item in strings)
+      {
+        if (item == "")
+        {
+          MessageBox.Show("data.txtに空行がありました。エラーの原因になるので取り除いてください。");
+          return str.Split(dem, StringSplitOptions.RemoveEmptyEntries);
+        }
+      }
+      return strings;
     }
     private string[] LoadTextByPath(string path)
     {
@@ -54,7 +66,7 @@ namespace HeliMark
       string s = reader.ReadToEnd();
       reader.Close();
 
-      return SplitByNewLine(s);
+      return SplitByNewLine(s, true);
     }
 
     private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -163,7 +175,8 @@ namespace HeliMark
       //this.dataGridViewMap.Rows.Add(
       //  "hujii", "1565", "2117", "79", "139.93841904476", "84", "39.05131728821", "1371", "139.95227141995", "1960", "39.0356716804129");
 
-      this.listBox地区一覧.SelectedIndex = 0;
+      if (this.listBox地区一覧.SelectedIndex == -1) // 20230608追加
+        this.listBox地区一覧.SelectedIndex = 0;
 
       // データを読み込む
       string[] dataLines = LoadTextByPath("data.txt");
@@ -265,6 +278,7 @@ namespace HeliMark
         src_ = src_.Replace("上曾根田", "上曽根田");
         src_ = src_.Replace("  ", " ");
         src_ = src_.Replace("  ", " ");
+        //src_ = src_.Replace("）～（", "～"); // 野沢 上野沢 114-（1）～（4）
 
         return src_;
       }
@@ -355,17 +369,19 @@ namespace HeliMark
       ResultStatus resultStatus;
       string[] ckindStrings = { "3回", "つや姫", "エサ米2回" };
       for (int i = 0; i < count; i++)
-      {        
-        string ckind = "0";
+      {
         string exl地名地番 = excel地名地番[i];
+        if (exl地名地番 == "地名地番" || exl地名地番 == "地名地番\t\t") continue;
+        if (exl地名地番 == "" || exl地名地番 == "\t\t")
+        {
+          errRowCount++;
+          continue;
+        }
+        exl地名地番 = exl地名地番.Replace("\t", " ");
+
+        string ckind = "0";
         if (!this.chkつや姫エサ米を無効.Checked)
         {
-          if (exl地名地番 == "地名地番") continue;
-          if (exl地名地番 == "")
-          {
-            errRowCount++;
-            continue;
-          }
 
           string exlつやエサ = excelつや姫エサ米2回[i];
           // 「tab」、「〇tab」、「tab〇」のいずれかとする
@@ -400,6 +416,7 @@ namespace HeliMark
         //foreach (DataGridViewRow r in this.dataGridView全データ.Rows)
         for (j = 0; j < rowCount; j++)
         {
+          // ここで例外が発生した場合は、data.txtの最後の行などに空行があるか確認すること。
           bool hit = this.chk置換処理を行う.Checked && 
             this.dataGridView全データ[6, j].Value.ToString() == "白井新田 藤井北 68" &&
             "白井新田 藤井北 67-4・68-4" == exl地名地番;
@@ -474,6 +491,7 @@ namespace HeliMark
 
       // 合筆の片割れを元地番と突き合わせする。
       string[] combinedSplit = combinedStringForCheckSplitSemicolon.Split(';');
+      this.txt合筆元データなし.Text = ""; //202230608追加
       foreach (string cmb in combinedSplit)
       {
         int i;

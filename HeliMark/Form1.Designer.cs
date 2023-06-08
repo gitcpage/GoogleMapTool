@@ -32,6 +32,7 @@ namespace HeliMark
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.tabPageメイン = new System.Windows.Forms.TabPage();
+      this.chk1ha毎に線を引く = new System.Windows.Forms.CheckBox();
       this.btnGitHubを開く = new System.Windows.Forms.Button();
       this.txtDatatxt再度読込 = new System.Windows.Forms.Button();
       this.chk地図に地区時刻表示 = new System.Windows.Forms.CheckBox();
@@ -135,7 +136,6 @@ namespace HeliMark
       this.label10 = new System.Windows.Forms.Label();
       this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
       this.printDialog1 = new System.Windows.Forms.PrintDialog();
-      this.chk1ha毎に線を引く = new System.Windows.Forms.CheckBox();
       this.tabControl1.SuspendLayout();
       this.tabPageメイン.SuspendLayout();
       this.groupBox2.SuspendLayout();
@@ -189,6 +189,19 @@ namespace HeliMark
       this.tabPageメイン.Text = "メイン";
       this.tabPageメイン.UseVisualStyleBackColor = true;
       // 
+      // chk1ha毎に線を引く
+      // 
+      this.chk1ha毎に線を引く.AutoSize = true;
+      this.chk1ha毎に線を引く.Checked = true;
+      this.chk1ha毎に線を引く.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.chk1ha毎に線を引く.Location = new System.Drawing.Point(518, 175);
+      this.chk1ha毎に線を引く.Name = "chk1ha毎に線を引く";
+      this.chk1ha毎に線を引く.Size = new System.Drawing.Size(117, 21);
+      this.chk1ha毎に線を引く.TabIndex = 11;
+      this.chk1ha毎に線を引く.Text = "1 ha 毎に線を引く";
+      this.chk1ha毎に線を引く.UseVisualStyleBackColor = true;
+      this.chk1ha毎に線を引く.CheckedChanged += new System.EventHandler(this.chk1ha毎に線を引く_CheckedChanged);
+      // 
       // btnGitHubを開く
       // 
       this.btnGitHubを開く.Location = new System.Drawing.Point(222, 180);
@@ -216,7 +229,7 @@ namespace HeliMark
       this.chk地図に地区時刻表示.CheckState = System.Windows.Forms.CheckState.Checked;
       this.chk地図に地区時刻表示.Location = new System.Drawing.Point(518, 153);
       this.chk地図に地区時刻表示.Name = "chk地図に地区時刻表示";
-      this.chk地図に地区時刻表示.Size = new System.Drawing.Size(135, 16);
+      this.chk地図に地区時刻表示.Size = new System.Drawing.Size(142, 21);
       this.chk地図に地区時刻表示.TabIndex = 8;
       this.chk地図に地区時刻表示.Text = "地図に地区・時刻表示";
       this.chk地図に地区時刻表示.UseVisualStyleBackColor = true;
@@ -243,7 +256,7 @@ namespace HeliMark
       this.chk表示地番.CheckState = System.Windows.Forms.CheckState.Checked;
       this.chk表示地番.Location = new System.Drawing.Point(6, 62);
       this.chk表示地番.Name = "chk表示地番";
-      this.chk表示地番.Size = new System.Drawing.Size(72, 16);
+      this.chk表示地番.Size = new System.Drawing.Size(79, 21);
       this.chk表示地番.TabIndex = 0;
       this.chk表示地番.Text = "表示地番";
       this.chk表示地番.UseVisualStyleBackColor = true;
@@ -254,7 +267,7 @@ namespace HeliMark
       this.chk地番.AutoSize = true;
       this.chk地番.Location = new System.Drawing.Point(102, 40);
       this.chk地番.Name = "chk地番";
-      this.chk地番.Size = new System.Drawing.Size(48, 16);
+      this.chk地番.Size = new System.Drawing.Size(55, 21);
       this.chk地番.TabIndex = 0;
       this.chk地番.Text = "地番";
       this.chk地番.UseVisualStyleBackColor = true;
@@ -265,7 +278,7 @@ namespace HeliMark
       this.chk字.AutoSize = true;
       this.chk字.Location = new System.Drawing.Point(60, 40);
       this.chk字.Name = "chk字";
-      this.chk字.Size = new System.Drawing.Size(36, 16);
+      this.chk字.Size = new System.Drawing.Size(43, 21);
       this.chk字.TabIndex = 0;
       this.chk字.Text = "字";
       this.chk字.UseVisualStyleBackColor = true;
@@ -276,7 +289,7 @@ namespace HeliMark
       this.chk大字.AutoSize = true;
       this.chk大字.Location = new System.Drawing.Point(6, 40);
       this.chk大字.Name = "chk大字";
-      this.chk大字.Size = new System.Drawing.Size(48, 16);
+      this.chk大字.Size = new System.Drawing.Size(55, 21);
       this.chk大字.TabIndex = 0;
       this.chk大字.Text = "大字";
       this.chk大字.UseVisualStyleBackColor = true;
@@ -287,7 +300,7 @@ namespace HeliMark
       this.chkid下4桁.AutoSize = true;
       this.chkid下4桁.Location = new System.Drawing.Point(6, 18);
       this.chkid下4桁.Name = "chkid下4桁";
-      this.chkid下4桁.Size = new System.Drawing.Size(63, 16);
+      this.chkid下4桁.Size = new System.Drawing.Size(70, 21);
       this.chkid下4桁.TabIndex = 0;
       this.chkid下4桁.Text = "id下4桁";
       this.chkid下4桁.UseVisualStyleBackColor = true;
@@ -312,7 +325,7 @@ namespace HeliMark
       this.chk地番データなし.AutoSize = true;
       this.chk地番データなし.Location = new System.Drawing.Point(6, 106);
       this.chk地番データなし.Name = "chk地番データなし";
-      this.chk地番データなし.Size = new System.Drawing.Size(123, 16);
+      this.chk地番データなし.Size = new System.Drawing.Size(130, 21);
       this.chk地番データなし.TabIndex = 0;
       this.chk地番データなし.Text = "地番データなし 白色";
       this.chk地番データなし.UseVisualStyleBackColor = true;
@@ -323,7 +336,7 @@ namespace HeliMark
       this.chk申込なし.AutoSize = true;
       this.chk申込なし.Location = new System.Drawing.Point(6, 84);
       this.chk申込なし.Name = "chk申込なし";
-      this.chk申込なし.Size = new System.Drawing.Size(95, 16);
+      this.chk申込なし.Size = new System.Drawing.Size(102, 21);
       this.chk申込なし.TabIndex = 0;
       this.chk申込なし.Text = "申込なし 緑色";
       this.chk申込なし.UseVisualStyleBackColor = true;
@@ -336,7 +349,7 @@ namespace HeliMark
       this.chk2回.CheckState = System.Windows.Forms.CheckState.Checked;
       this.chk2回.Location = new System.Drawing.Point(6, 62);
       this.chk2回.Name = "chk2回";
-      this.chk2回.Size = new System.Drawing.Size(101, 16);
+      this.chk2回.Size = new System.Drawing.Size(108, 21);
       this.chk2回.TabIndex = 0;
       this.chk2回.Text = "エサ米2回 黄色";
       this.chk2回.UseVisualStyleBackColor = true;
@@ -349,7 +362,7 @@ namespace HeliMark
       this.chkつや姫.CheckState = System.Windows.Forms.CheckState.Checked;
       this.chkつや姫.Location = new System.Drawing.Point(6, 40);
       this.chkつや姫.Name = "chkつや姫";
-      this.chkつや姫.Size = new System.Drawing.Size(83, 16);
+      this.chkつや姫.Size = new System.Drawing.Size(90, 21);
       this.chkつや姫.TabIndex = 0;
       this.chkつや姫.Text = "つや姫 青色";
       this.chkつや姫.UseVisualStyleBackColor = true;
@@ -362,7 +375,7 @@ namespace HeliMark
       this.chk3回.CheckState = System.Windows.Forms.CheckState.Checked;
       this.chk3回.Location = new System.Drawing.Point(6, 18);
       this.chk3回.Name = "chk3回";
-      this.chk3回.Size = new System.Drawing.Size(70, 16);
+      this.chk3回.Size = new System.Drawing.Size(77, 21);
       this.chk3回.TabIndex = 0;
       this.chk3回.Text = "3回 赤色";
       this.chk3回.UseVisualStyleBackColor = true;
@@ -407,6 +420,7 @@ namespace HeliMark
             this.下緯度});
       this.dataGridViewMapSetting.Location = new System.Drawing.Point(6, 228);
       this.dataGridViewMapSetting.Name = "dataGridViewMapSetting";
+      this.dataGridViewMapSetting.RowHeadersWidth = 62;
       this.dataGridViewMapSetting.RowTemplate.Height = 21;
       this.dataGridViewMapSetting.Size = new System.Drawing.Size(756, 209);
       this.dataGridViewMapSetting.TabIndex = 3;
@@ -416,6 +430,7 @@ namespace HeliMark
       // 
       this.地区.Frozen = true;
       this.地区.HeaderText = "地区";
+      this.地区.MinimumWidth = 8;
       this.地区.Name = "地区";
       this.地区.ReadOnly = true;
       this.地区.Width = 60;
@@ -423,66 +438,77 @@ namespace HeliMark
       // img
       // 
       this.img.HeaderText = "画像";
+      this.img.MinimumWidth = 8;
       this.img.Name = "img";
       this.img.Width = 90;
       // 
       // 横サイズ
       // 
       this.横サイズ.HeaderText = "横サイズ";
+      this.横サイズ.MinimumWidth = 8;
       this.横サイズ.Name = "横サイズ";
       this.横サイズ.Width = 80;
       // 
       // 縦サイズ
       // 
       this.縦サイズ.HeaderText = "縦サイズ";
+      this.縦サイズ.MinimumWidth = 8;
       this.縦サイズ.Name = "縦サイズ";
       this.縦サイズ.Width = 80;
       // 
       // 左基準
       // 
       this.左基準.HeaderText = "左基準";
+      this.左基準.MinimumWidth = 8;
       this.左基準.Name = "左基準";
       this.左基準.Width = 70;
       // 
       // 左経度
       // 
       this.左経度.HeaderText = "左経度";
+      this.左経度.MinimumWidth = 8;
       this.左経度.Name = "左経度";
       this.左経度.Width = 80;
       // 
       // 上基準
       // 
       this.上基準.HeaderText = "上基準";
+      this.上基準.MinimumWidth = 8;
       this.上基準.Name = "上基準";
       this.上基準.Width = 70;
       // 
       // 上緯度
       // 
       this.上緯度.HeaderText = "上緯度";
+      this.上緯度.MinimumWidth = 8;
       this.上緯度.Name = "上緯度";
       this.上緯度.Width = 80;
       // 
       // 右基準
       // 
       this.右基準.HeaderText = "右基準";
+      this.右基準.MinimumWidth = 8;
       this.右基準.Name = "右基準";
       this.右基準.Width = 70;
       // 
       // 右経度
       // 
       this.右経度.HeaderText = "右経度";
+      this.右経度.MinimumWidth = 8;
       this.右経度.Name = "右経度";
       this.右経度.Width = 80;
       // 
       // 下基準
       // 
       this.下基準.HeaderText = "下基準";
+      this.下基準.MinimumWidth = 8;
       this.下基準.Name = "下基準";
       this.下基準.Width = 70;
       // 
       // 下緯度
       // 
       this.下緯度.HeaderText = "下緯度";
+      this.下緯度.MinimumWidth = 8;
       this.下緯度.Name = "下緯度";
       this.下緯度.Width = 80;
       // 
@@ -671,6 +697,7 @@ namespace HeliMark
             this.dataGridViewTextBoxColumn10});
       this.dataGridView表示データ.Location = new System.Drawing.Point(3, 28);
       this.dataGridView表示データ.Name = "dataGridView表示データ";
+      this.dataGridView表示データ.RowHeadersWidth = 62;
       this.dataGridView表示データ.RowTemplate.Height = 21;
       this.dataGridView表示データ.Size = new System.Drawing.Size(762, 374);
       this.dataGridView表示データ.TabIndex = 1;
@@ -679,6 +706,7 @@ namespace HeliMark
       // 
       this.dataGridViewTextBoxColumn1.Frozen = true;
       this.dataGridViewTextBoxColumn1.HeaderText = "id";
+      this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
       this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
       this.dataGridViewTextBoxColumn1.ReadOnly = true;
       this.dataGridViewTextBoxColumn1.Width = 70;
@@ -686,18 +714,23 @@ namespace HeliMark
       // dataGridViewTextBoxColumn2
       // 
       this.dataGridViewTextBoxColumn2.HeaderText = "緯度";
+      this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
       this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
       this.dataGridViewTextBoxColumn2.ReadOnly = true;
+      this.dataGridViewTextBoxColumn2.Width = 150;
       // 
       // dataGridViewTextBoxColumn3
       // 
       this.dataGridViewTextBoxColumn3.HeaderText = "経度";
+      this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
       this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
       this.dataGridViewTextBoxColumn3.ReadOnly = true;
+      this.dataGridViewTextBoxColumn3.Width = 150;
       // 
       // dataGridViewTextBoxColumn4
       // 
       this.dataGridViewTextBoxColumn4.HeaderText = "幅";
+      this.dataGridViewTextBoxColumn4.MinimumWidth = 8;
       this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
       this.dataGridViewTextBoxColumn4.ReadOnly = true;
       this.dataGridViewTextBoxColumn4.Width = 40;
@@ -705,6 +738,7 @@ namespace HeliMark
       // dataGridViewTextBoxColumn5
       // 
       this.dataGridViewTextBoxColumn5.HeaderText = "高さ";
+      this.dataGridViewTextBoxColumn5.MinimumWidth = 8;
       this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
       this.dataGridViewTextBoxColumn5.ReadOnly = true;
       this.dataGridViewTextBoxColumn5.Width = 40;
@@ -712,6 +746,7 @@ namespace HeliMark
       // dataGridViewTextBoxColumn6
       // 
       this.dataGridViewTextBoxColumn6.HeaderText = "角度";
+      this.dataGridViewTextBoxColumn6.MinimumWidth = 8;
       this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
       this.dataGridViewTextBoxColumn6.ReadOnly = true;
       this.dataGridViewTextBoxColumn6.Width = 40;
@@ -719,24 +754,30 @@ namespace HeliMark
       // dataGridViewTextBoxColumn7
       // 
       this.dataGridViewTextBoxColumn7.HeaderText = "地名地番";
+      this.dataGridViewTextBoxColumn7.MinimumWidth = 8;
       this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+      this.dataGridViewTextBoxColumn7.Width = 150;
       // 
       // dataGridViewTextBoxColumn8
       // 
       this.dataGridViewTextBoxColumn8.HeaderText = "色品種";
+      this.dataGridViewTextBoxColumn8.MinimumWidth = 8;
       this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
       this.dataGridViewTextBoxColumn8.Width = 70;
       // 
       // dataGridViewTextBoxColumn9
       // 
       this.dataGridViewTextBoxColumn9.HeaderText = "有効";
+      this.dataGridViewTextBoxColumn9.MinimumWidth = 8;
       this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
       this.dataGridViewTextBoxColumn9.Width = 40;
       // 
       // dataGridViewTextBoxColumn10
       // 
       this.dataGridViewTextBoxColumn10.HeaderText = "表示地番";
+      this.dataGridViewTextBoxColumn10.MinimumWidth = 8;
       this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+      this.dataGridViewTextBoxColumn10.Width = 150;
       // 
       // tabPage全データ
       // 
@@ -807,6 +848,7 @@ namespace HeliMark
             this.disp});
       this.dataGridView全データ.Location = new System.Drawing.Point(3, 24);
       this.dataGridView全データ.Name = "dataGridView全データ";
+      this.dataGridView全データ.RowHeadersWidth = 62;
       this.dataGridView全データ.RowTemplate.Height = 21;
       this.dataGridView全データ.Size = new System.Drawing.Size(762, 374);
       this.dataGridView全データ.TabIndex = 0;
@@ -816,6 +858,7 @@ namespace HeliMark
       // 
       this.id.Frozen = true;
       this.id.HeaderText = "id";
+      this.id.MinimumWidth = 8;
       this.id.Name = "id";
       this.id.ReadOnly = true;
       this.id.Width = 70;
@@ -823,18 +866,23 @@ namespace HeliMark
       // lat
       // 
       this.lat.HeaderText = "緯度(マ地番)";
+      this.lat.MinimumWidth = 8;
       this.lat.Name = "lat";
       this.lat.ReadOnly = true;
+      this.lat.Width = 150;
       // 
       // lng
       // 
       this.lng.HeaderText = "経度(マid)";
+      this.lng.MinimumWidth = 8;
       this.lng.Name = "lng";
       this.lng.ReadOnly = true;
+      this.lng.Width = 150;
       // 
       // width
       // 
       this.width.HeaderText = "幅";
+      this.width.MinimumWidth = 8;
       this.width.Name = "width";
       this.width.ReadOnly = true;
       this.width.Width = 40;
@@ -842,6 +890,7 @@ namespace HeliMark
       // height
       // 
       this.height.HeaderText = "高さ";
+      this.height.MinimumWidth = 8;
       this.height.Name = "height";
       this.height.ReadOnly = true;
       this.height.Width = 40;
@@ -849,6 +898,7 @@ namespace HeliMark
       // arcdegree
       // 
       this.arcdegree.HeaderText = "角度";
+      this.arcdegree.MinimumWidth = 8;
       this.arcdegree.Name = "arcdegree";
       this.arcdegree.ReadOnly = true;
       this.arcdegree.Width = 40;
@@ -856,24 +906,30 @@ namespace HeliMark
       // gislandad
       // 
       this.gislandad.HeaderText = "地名地番";
+      this.gislandad.MinimumWidth = 8;
       this.gislandad.Name = "gislandad";
+      this.gislandad.Width = 150;
       // 
       // ckind
       // 
       this.ckind.HeaderText = "色品種";
+      this.ckind.MinimumWidth = 8;
       this.ckind.Name = "ckind";
       this.ckind.Width = 70;
       // 
       // enable
       // 
       this.enable.HeaderText = "有効";
+      this.enable.MinimumWidth = 8;
       this.enable.Name = "enable";
       this.enable.Width = 40;
       // 
       // disp
       // 
       this.disp.HeaderText = "表示地番";
+      this.disp.MinimumWidth = 8;
       this.disp.Name = "disp";
+      this.disp.Width = 150;
       // 
       // tabPageExcelから取得
       // 
@@ -923,7 +979,7 @@ namespace HeliMark
       this.chkつや姫エサ米を無効.AutoSize = true;
       this.chkつや姫エサ米を無効.Location = new System.Drawing.Point(574, 212);
       this.chkつや姫エサ米を無効.Name = "chkつや姫エサ米を無効";
-      this.chkつや姫エサ米を無効.Size = new System.Drawing.Size(179, 16);
+      this.chkつや姫エサ米を無効.Size = new System.Drawing.Size(186, 21);
       this.chkつや姫エサ米を無効.TabIndex = 6;
       this.chkつや姫エサ米を無効.Text = "「つや姫、エサ米2回」を無効で赤";
       this.chkつや姫エサ米を無効.UseVisualStyleBackColor = true;
@@ -936,7 +992,7 @@ namespace HeliMark
       this.chk置換処理を行う.CheckState = System.Windows.Forms.CheckState.Checked;
       this.chk置換処理を行う.Location = new System.Drawing.Point(574, 190);
       this.chk置換処理を行う.Name = "chk置換処理を行う";
-      this.chk置換処理を行う.Size = new System.Drawing.Size(100, 16);
+      this.chk置換処理を行う.Size = new System.Drawing.Size(107, 21);
       this.chk置換処理を行う.TabIndex = 6;
       this.chk置換処理を行う.Text = "置換処理を行う";
       this.chk置換処理を行う.UseVisualStyleBackColor = true;
@@ -948,7 +1004,7 @@ namespace HeliMark
       this.chk取得処理で全て処理する.CheckState = System.Windows.Forms.CheckState.Checked;
       this.chk取得処理で全て処理する.Location = new System.Drawing.Point(574, 168);
       this.chk取得処理で全て処理する.Name = "chk取得処理で全て処理する";
-      this.chk取得処理で全て処理する.Size = new System.Drawing.Size(146, 16);
+      this.chk取得処理で全て処理する.Size = new System.Drawing.Size(153, 21);
       this.chk取得処理で全て処理する.TabIndex = 6;
       this.chk取得処理で全て処理する.Text = "取得処理で全て処理する";
       this.chk取得処理で全て処理する.UseVisualStyleBackColor = true;
@@ -1172,24 +1228,11 @@ namespace HeliMark
       this.label10.Name = "label10";
       this.label10.Size = new System.Drawing.Size(122, 12);
       this.label10.TabIndex = 3;
-      this.label10.Text = "Version 2.8(2022.06.19)";
+      this.label10.Text = "Version 2.9(2023.06.08)";
       // 
       // printDialog1
       // 
       this.printDialog1.UseEXDialog = true;
-      // 
-      // chk1ha毎に線を引く
-      // 
-      this.chk1ha毎に線を引く.AutoSize = true;
-      this.chk1ha毎に線を引く.Checked = true;
-      this.chk1ha毎に線を引く.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.chk1ha毎に線を引く.Location = new System.Drawing.Point(518, 175);
-      this.chk1ha毎に線を引く.Name = "chk1ha毎に線を引く";
-      this.chk1ha毎に線を引く.Size = new System.Drawing.Size(110, 16);
-      this.chk1ha毎に線を引く.TabIndex = 11;
-      this.chk1ha毎に線を引く.Text = "1 ha 毎に線を引く";
-      this.chk1ha毎に線を引く.UseVisualStyleBackColor = true;
-      this.chk1ha毎に線を引く.CheckedChanged += new System.EventHandler(this.chk1ha毎に線を引く_CheckedChanged);
       // 
       // Form1
       // 
