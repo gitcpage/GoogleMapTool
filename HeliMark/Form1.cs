@@ -28,9 +28,12 @@ namespace HeliMark
       Print.Init(this.pageSetupDialog1);
       chk取得処理で全て処理する_CheckedChanged(this, null);
       chk塗りつぶしマーク(null, null);
+#if DEBUG
+      this.Text += "(Debug)";
+#endif
     }
 
-    private string[] SplitByNewLine(string str, bool doWarning = false)
+    /*private string[] SplitByNewLine(string str, bool doWarning = false)
     {
       string[] dem = new string[1];
       dem[0] = Environment.NewLine;
@@ -67,7 +70,7 @@ namespace HeliMark
       reader.Close();
 
       return SplitByNewLine(s, true);
-    }
+    }*/
 
     private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
     {
@@ -160,7 +163,7 @@ namespace HeliMark
       if (this.dataGridViewMapSetting.Rows.Count == 0)
       {
         kDefaultTitleBarText = this.Text;
-        string[] mapsettingLines = LoadTextByPath("mapsetting.txt");
+        string[] mapsettingLines = FormLib.LoadTextByPath("mapsetting.txt");
         m_mapSetting = new MapSetting[mapsettingLines.Length];
         int i = 0;
         foreach (string s in mapsettingLines)
@@ -179,7 +182,7 @@ namespace HeliMark
         this.listBox地区一覧.SelectedIndex = 0;
 
       // データを読み込む
-      string[] dataLines = LoadTextByPath("data.txt");
+      string[] dataLines = FormLib.LoadTextByPath("data.txt");
       this.dataGridView全データ.Rows.Clear();
       foreach (string s in dataLines)
       {
@@ -271,6 +274,10 @@ namespace HeliMark
       {
         src = "白井新田 藤井南 23・24-(1・2・3)";
       }
+      if (src.StartsWith("白井新田 小端沢流 31-(8)-1～5"))
+      {
+        src = "白井新田 小端沢流 31-(8)";
+      }
       string ToGis字(string src_)
       {
         src_ = src_.Replace("漆曽根", "うるしそね");
@@ -343,16 +350,61 @@ namespace HeliMark
       //System.Diagnostics.Stopwatch stopWatch = new System.Diagnostics.Stopwatch();
       //stopWatch.Start();
 
+      /*if (!this.chk大豆.Checked)
+      {
+        if (this.txtExcel地名地番.Text.Contains("字"))
+        {
+          MessageBox.Show("地名地番に「字」文字が見つかりました。[大豆]チェックがあるか確認してください。",
+            "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+          return;
+        }
+      }*/
+
       if (this.chk取得処理で全て処理する.Checked)
       {
         btn申込全てクリア_Click(null, null);
       }
-      string[] excel地名地番 = SplitByNewLine(this.txtExcel地名地番.Text);
+      string[] excel地名地番 = FormLib.SplitByNewLine(this.txtExcel地名地番.Text);
+      if (this.chk大豆.Checked)
+      {
+        for (int i = 0; i < excel地名地番.Length; ++i)
+        {
+          string s = excel地名地番[i];
+          s = s.Replace("字", " ").Replace("　", " ").Replace("（", "(").Replace("）", ")").Replace("、", ",").Replace("－", "-");
+          s = s.Replace("(面積交付対象外)", "");
+          int spaceCount = 0;
+          for (int j = 0; j < s.Length;++j)
+          { // 吉出字与五田31 などの字と地番の間に空白がない場合の処理
+            if (s[j] == ' ' && j < s.Length - 1)
+            {
+              if (spaceCount == 0)
+              {
+                spaceCount++;
+                continue;
+              }
+              if (char.IsDigit(s[j + 1])) break;
+            }
+            else if (char.IsDigit(s[j]))
+            {
+              if (spaceCount != 1)
+              {
+                MessageBox.Show("フォーマットエラーのため処理を終了します。\n" + s,
+                  "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+              }
+              s = s.Substring(0, j) + " " + s.Substring(j);
+              break;
+            }
+          }
+          excel地名地番[i] = s;
+        }
+        this.txtExcel地名地番.Text = string.Join(Environment.NewLine, excel地名地番);
+      }// if (this.chk大豆.Checked)
       string[] excelつや姫エサ米2回 = null;
       int count = excel地名地番.Length;
       if (!this.chkつや姫エサ米を無効.Checked)
       {
-        excelつや姫エサ米2回 = SplitByNewLine(this.txtExcelつや姫エサ米2回.Text);
+        excelつや姫エサ米2回 = FormLib.SplitByNewLine(this.txtExcelつや姫エサ米2回.Text);
         count = Math.Min(count, excelつや姫エサ米2回.Length);
       }
       string result = "（入力件数一致）";
@@ -371,7 +423,7 @@ namespace HeliMark
       for (int i = 0; i < count; i++)
       {
         string exl地名地番 = excel地名地番[i];
-        if (exl地名地番 == "地名地番" || exl地名地番 == "地名地番\t\t") continue;
+        if (exl地名地番.Contains("地番")) continue;
         if (exl地名地番 == "" || exl地名地番 == "\t\t")
         {
           errRowCount++;
@@ -384,7 +436,7 @@ namespace HeliMark
         {
 
           string exlつやエサ = excelつや姫エサ米2回[i];
-          // 「tab」、「〇tab」、「tab〇」のいずれかとする
+          // 「tab」、「〇tab」、「tab〇」、「1」、「2」のいずれかとする
           if (exlつやエサ == "")
           {
             errRowCount++;
@@ -394,13 +446,15 @@ namespace HeliMark
           if (exlつやエサ.Length == 1)
           {
             ;// ckind = "0";
+            if (exlつやエサ=="1" || exlつやエサ == "１")
+              ckind = "2";
           }
           else if (
             exlつやエサ.StartsWith("○") ||//記号
             exlつやエサ.StartsWith("◯") ||
             exlつやエサ.StartsWith("❍") ||
             exlつやエサ.StartsWith("⭘") ||
-            exlつやエサ.StartsWith("〇")//漢数字○
+            exlつやエサ.StartsWith("〇") //漢数字○
             )
           {
             ckind = "1";
@@ -689,6 +743,17 @@ namespace HeliMark
     private void chk1ha毎に線を引く_CheckedChanged(object sender, EventArgs e)
     {
       Flags.is1ha毎に線を引く = this.chk1ha毎に線を引く.Checked;
+    }
+
+    private void btnData編集フォームへ_Click(object sender, EventArgs e)
+    {
+      Program.s_Next = Program.Next.DataForm;
+      this.Close();
+    }
+
+    private void btnフォルダを開く_Click(object sender, EventArgs e)
+    {
+      System.Diagnostics.Process.Start(Application.StartupPath);
     }
   }
 }

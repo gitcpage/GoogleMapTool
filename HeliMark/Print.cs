@@ -32,7 +32,9 @@ namespace HeliMark
 
     static public void Init(PageSetupDialog psd)
     {
-      if (s_printDocument == null)
+      // s_formPageSetupDialog = psd; 以降のみ上書きすると、
+      // Form1.m_ImgCtrl あたりで原因不明のヌルポインタが出る。
+      //if (s_printDocument == null)
       {
         s_printDocument = new PrintDocument();
         PrinterSettings.PaperSizeCollection psc = s_printDocument.PrinterSettings.PaperSizes;
@@ -48,10 +50,14 @@ namespace HeliMark
         Margins m = s_formPageSetupDialog.PageSettings.Margins;
         m.Left = m.Top = m.Right = m.Bottom = 35;  // 35:8.8mm 40:10.1mm
       }
-      else
+      //else
       {
-        MessageBox.Show("Error: プリンタ処理で初期化を２回以上呼び出しました。");
+        //MessageBox.Show("Error: プリンタ処理で初期化を２回以上呼び出しました。");
       }
+      /*s_formPageSetupDialog = psd;
+      s_formPageSetupDialog.PageSettings = s_printDocument.DefaultPageSettings;
+      Margins m = s_formPageSetupDialog.PageSettings.Margins;
+      m.Left = m.Top = m.Right = m.Bottom = 35;  // 35:8.8mm 40:10.1mm*/
     }
 
     static public bool ShowPageDialog(bool doShowMessage = false)

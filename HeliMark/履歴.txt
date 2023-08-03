@@ -1,0 +1,92 @@
+﻿2023/08/02
+　Form1(ヘリ地図作成フォーム)に[chk大豆]を追加
+　Form1.csの btn取得処理を行う_Click() の処理を追加
+　　「字」チェックを追加。
+　　[chk大豆]チェック時の処理
+　　　Replace ("字", " ") ("　", " ") ("（", "(") ("）", ")") ("、", ",") ("－", "-")
+　　　吉出字与五田31 などの字と地番の間に空白がない場合の処理
+　　　this.txtExcel地名地番.Text = string.Join(Environment.NewLine, excel地名地番);
+
+2023/07/01
+  #if DEBUG でタイトルに「(Debug)」を追加
+  [フォルダを開く]ボタンを追加
+
+
+2023/06/08
+  if (this.listBox地区一覧.SelectedIndex == -1) // 20230608追加
+    this.listBox地区一覧.SelectedIndex = 0;
+
+  this.txt合筆元データなし.Text = ""; //202230608追加
+
+2023/06/07
+　空行があった場合に警告する。
+
+2022/06/19
+  Version 2.8(2022.06.19)
+　「1 ha 毎に線を引く」チェックを追加。
+  [Excelから取得]タブの[取得処理を行う]で地名地番をタブ区切りでも処理可能にする。
+
+2022/06/13
+  Version 2.7(2022.06.13)
+　バックアップ
+　Replace.cs追加
+　Replace処理追加
+  Form1.cs  SplitByNewLineメソッド
+    +return str.Split(dem, StringSplitOptions.None);//RemoveEmptyEntries);
+    -return str.Split(dem, StringSplitOptions.RemoveEmptyEntries);
+　置換処理高速化
+　  +if (sgis_tokens[1] != ss_tokens[1]) continue; // 子字判定で高速化。4.65秒から1.94秒になった
+　GitHub作成 https://github.com/gitcpage/GoogleMapTool/tree/main/HeliMark
+　[メイン]タブに[GitHubを開く]を追加
+
+2022/05/31
+ [印刷する]の機能追加、および確認完了。
+
+
+08/02 2.4
+ ImageCtrl.cs
+      -m_blueBrush = new SolidBrush(Color.FromArgb(51, 50, 150, 255));
+      +m_blueBrush = new SolidBrush(Color.FromArgb(101, 50, 150, 255));
+
+06/10
+ToDo:
+ 全データのソート機能
+
+バージョン2.0へ移行
+
+06/03
+ToDo:
+ 閉じる時、未保存確認
+ マーク表示/非表示を3回、つや姫、2回、申込なしの4パターン作成
+ マークテキストをカスタマイズする
+
+05/20
+-マークの表示
+-画像のスクロール位置の保存
+ToDo:
+ 藤井以外のmapsetting.txtデータ作成
+ 画像の保存
+ データの変更
+
+05/18
+-ウィンドウ下のラベルに時刻表示を追加
+ToDo:
+ 05/20 ImageCtrl.PaintMarkメソッドに表示処理
+
+05/02
+-id～memoまでのデータグリッド追加
+*サーバーからデータエクスポート
+　以下のフォルダにエクスポートデータファイル作成
+　　C:\Users\cpage\Desktop\xserver\GoogleMapTool\HeliMark\bin\Release
+　　C:\Users\cpage\Desktop\ヘリ地図
+≒暫定命名
+　画像緯度経度、マーク、申込、idgis、（必要なら）色指定
+
+ToDo:
+ エクスポートデータの表示処理
+ C:\Users\cpage\Desktop\ヘリ地図\2021.04.14以前\グーグル緯度経度.xlsを参考にGISとの対応表作成
+
+
+2021/05/01
+-ImageCtrl.cs に半透明処理を追加
+-フォームに画像表示タブにパネルスを追加しクロール処理機能を追加（画像クリックで切り替え）
