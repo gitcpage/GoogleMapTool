@@ -31,6 +31,37 @@ namespace HeliMark
 #if DEBUG
       this.Text += "(Debug)";
 #endif
+      // ▲▲▲コントロールサイズ等▲▲▲
+      string controlsString = "";
+      int maxWidth = 0;
+      int maxHeight = 0;
+      foreach (Control c in this.Controls)
+      {
+        int right = c.Right;
+        int bottom = c.Bottom;
+        maxWidth = Math.Max(maxWidth, right);
+        maxHeight = Math.Max(maxHeight, bottom);
+        controlsString += c.Name + "(" +
+          right.ToString() + ", " + bottom.ToString() + 
+          ")" + c.Text + Environment.NewLine;
+      }
+      //this.txtMemo.Text = controlsString + Environment.NewLine + Environment.NewLine +
+      //  this.Width + ", " + this.Height + " form" + Environment.NewLine +
+      //  maxWidth + ", " + maxHeight + " controls" + Environment.NewLine +
+      //  (this.Width-maxWidth).ToString() + ", " + (this.Height-maxHeight).ToString() + " diff";
+      int formNeedWidth = maxWidth + 22;
+      int formNeedHeight = maxHeight + 48;
+      if (this.Width < formNeedWidth)
+      {
+        this.Width = formNeedWidth;
+        MessageBox.Show("this.Width = formNeedWidth;");
+      }
+      if (this.Height < formNeedHeight)
+      {
+        this.Height = formNeedHeight;
+        MessageBox.Show("this.Height = formNeedHeight;");
+      }
+      // ▼▼▼コントロールサイズ等▼▼▼
     }
 
     /*private string[] SplitByNewLine(string str, bool doWarning = false)

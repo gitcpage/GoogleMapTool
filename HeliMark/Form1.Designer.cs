@@ -1,4 +1,4 @@
-﻿
+﻿﻿
 namespace HeliMark
 {
   partial class Form1
@@ -109,6 +109,7 @@ namespace HeliMark
       this.enable = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.disp = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.tabPageExcelから取得 = new System.Windows.Forms.TabPage();
+      this.chk大豆 = new System.Windows.Forms.CheckBox();
       this.btn入力クリア = new System.Windows.Forms.Button();
       this.chkつや姫エサ米を無効 = new System.Windows.Forms.CheckBox();
       this.chk置換処理を行う = new System.Windows.Forms.CheckBox();
@@ -133,12 +134,11 @@ namespace HeliMark
       this.txt地名地番不明 = new System.Windows.Forms.TextBox();
       this.txtExcelつや姫エサ米2回 = new System.Windows.Forms.TextBox();
       this.tabPageメモ = new System.Windows.Forms.TabPage();
-      this.textBox1 = new System.Windows.Forms.TextBox();
+      this.txtMemo = new System.Windows.Forms.TextBox();
       this.lblデータフィルタ = new System.Windows.Forms.Label();
       this.label10 = new System.Windows.Forms.Label();
       this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
       this.printDialog1 = new System.Windows.Forms.PrintDialog();
-      this.chk大豆 = new System.Windows.Forms.CheckBox();
       this.tabControl1.SuspendLayout();
       this.tabPageメイン.SuspendLayout();
       this.groupBox2.SuspendLayout();
@@ -166,11 +166,10 @@ namespace HeliMark
       this.tabControl1.Controls.Add(this.tabPage全データ);
       this.tabControl1.Controls.Add(this.tabPageExcelから取得);
       this.tabControl1.Controls.Add(this.tabPageメモ);
-      this.tabControl1.Location = new System.Drawing.Point(20, 18);
-      this.tabControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.tabControl1.Location = new System.Drawing.Point(12, 12);
       this.tabControl1.Name = "tabControl1";
       this.tabControl1.SelectedIndex = 0;
-      this.tabControl1.Size = new System.Drawing.Size(1293, 704);
+      this.tabControl1.Size = new System.Drawing.Size(776, 469);
       this.tabControl1.TabIndex = 0;
       // 
       // tabPageメイン
@@ -187,21 +186,19 @@ namespace HeliMark
       this.tabPageメイン.Controls.Add(this.btn地図画像を作る);
       this.tabPageメイン.Controls.Add(this.dataGridViewMapSetting);
       this.tabPageメイン.Controls.Add(this.listBox地区一覧);
-      this.tabPageメイン.Location = new System.Drawing.Point(4, 28);
-      this.tabPageメイン.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.tabPageメイン.Location = new System.Drawing.Point(4, 22);
       this.tabPageメイン.Name = "tabPageメイン";
-      this.tabPageメイン.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-      this.tabPageメイン.Size = new System.Drawing.Size(1285, 672);
+      this.tabPageメイン.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.tabPageメイン.Size = new System.Drawing.Size(768, 443);
       this.tabPageメイン.TabIndex = 0;
       this.tabPageメイン.Text = "メイン";
       this.tabPageメイン.UseVisualStyleBackColor = true;
       // 
       // btnData編集フォームへ
       // 
-      this.btnData編集フォームへ.Location = new System.Drawing.Point(1088, 273);
-      this.btnData編集フォームへ.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.btnData編集フォームへ.Location = new System.Drawing.Point(653, 182);
       this.btnData編集フォームへ.Name = "btnData編集フォームへ";
-      this.btnData編集フォームへ.Size = new System.Drawing.Size(180, 45);
+      this.btnData編集フォームへ.Size = new System.Drawing.Size(108, 30);
       this.btnData編集フォームへ.TabIndex = 12;
       this.btnData編集フォームへ.Text = "Data編集フォームへ";
       this.btnData編集フォームへ.UseVisualStyleBackColor = true;
@@ -212,10 +209,9 @@ namespace HeliMark
       this.chk1ha毎に線を引く.AutoSize = true;
       this.chk1ha毎に線を引く.Checked = true;
       this.chk1ha毎に線を引く.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.chk1ha毎に線を引く.Location = new System.Drawing.Point(863, 262);
-      this.chk1ha毎に線を引く.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.chk1ha毎に線を引く.Location = new System.Drawing.Point(518, 175);
       this.chk1ha毎に線を引く.Name = "chk1ha毎に線を引く";
-      this.chk1ha毎に線を引く.Size = new System.Drawing.Size(162, 22);
+      this.chk1ha毎に線を引く.Size = new System.Drawing.Size(110, 16);
       this.chk1ha毎に線を引く.TabIndex = 11;
       this.chk1ha毎に線を引く.Text = "1 ha 毎に線を引く";
       this.chk1ha毎に線を引く.UseVisualStyleBackColor = true;
@@ -223,10 +219,9 @@ namespace HeliMark
       // 
       // btnGitHubを開く
       // 
-      this.btnGitHubを開く.Location = new System.Drawing.Point(370, 270);
-      this.btnGitHubを開く.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.btnGitHubを開く.Location = new System.Drawing.Point(222, 180);
       this.btnGitHubを開く.Name = "btnGitHubを開く";
-      this.btnGitHubを開く.Size = new System.Drawing.Size(167, 50);
+      this.btnGitHubを開く.Size = new System.Drawing.Size(100, 33);
       this.btnGitHubを開く.TabIndex = 10;
       this.btnGitHubを開く.Text = "GitHubを開く";
       this.btnGitHubを開く.UseVisualStyleBackColor = true;
@@ -234,10 +229,9 @@ namespace HeliMark
       // 
       // btnフォルダを開く
       // 
-      this.btnフォルダを開く.Location = new System.Drawing.Point(371, 189);
-      this.btnフォルダを開く.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.btnフォルダを開く.Location = new System.Drawing.Point(223, 126);
       this.btnフォルダを開く.Name = "btnフォルダを開く";
-      this.btnフォルダを開く.Size = new System.Drawing.Size(167, 48);
+      this.btnフォルダを開く.Size = new System.Drawing.Size(100, 32);
       this.btnフォルダを開く.TabIndex = 9;
       this.btnフォルダを開く.Text = "フォルダを開く";
       this.btnフォルダを開く.UseVisualStyleBackColor = true;
@@ -245,10 +239,9 @@ namespace HeliMark
       // 
       // txtDatatxt再度読込
       // 
-      this.txtDatatxt再度読込.Location = new System.Drawing.Point(370, 123);
-      this.txtDatatxt再度読込.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.txtDatatxt再度読込.Location = new System.Drawing.Point(222, 82);
       this.txtDatatxt再度読込.Name = "txtDatatxt再度読込";
-      this.txtDatatxt再度読込.Size = new System.Drawing.Size(167, 48);
+      this.txtDatatxt再度読込.Size = new System.Drawing.Size(100, 32);
       this.txtDatatxt再度読込.TabIndex = 9;
       this.txtDatatxt再度読込.Text = "data.txt再度読込";
       this.txtDatatxt再度読込.UseVisualStyleBackColor = true;
@@ -259,10 +252,9 @@ namespace HeliMark
       this.chk地図に地区時刻表示.AutoSize = true;
       this.chk地図に地区時刻表示.Checked = true;
       this.chk地図に地区時刻表示.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.chk地図に地区時刻表示.Location = new System.Drawing.Point(863, 230);
-      this.chk地図に地区時刻表示.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.chk地図に地区時刻表示.Location = new System.Drawing.Point(518, 153);
       this.chk地図に地区時刻表示.Name = "chk地図に地区時刻表示";
-      this.chk地図に地区時刻表示.Size = new System.Drawing.Size(201, 22);
+      this.chk地図に地区時刻表示.Size = new System.Drawing.Size(135, 16);
       this.chk地図に地区時刻表示.TabIndex = 8;
       this.chk地図に地区時刻表示.Text = "地図に地区・時刻表示";
       this.chk地図に地区時刻表示.UseVisualStyleBackColor = true;
@@ -275,11 +267,9 @@ namespace HeliMark
       this.groupBox2.Controls.Add(this.chk字);
       this.groupBox2.Controls.Add(this.chk大字);
       this.groupBox2.Controls.Add(this.chkid下4桁);
-      this.groupBox2.Location = new System.Drawing.Point(867, 56);
-      this.groupBox2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.groupBox2.Location = new System.Drawing.Point(520, 37);
       this.groupBox2.Name = "groupBox2";
-      this.groupBox2.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-      this.groupBox2.Size = new System.Drawing.Size(292, 165);
+      this.groupBox2.Size = new System.Drawing.Size(175, 110);
       this.groupBox2.TabIndex = 7;
       this.groupBox2.TabStop = false;
       this.groupBox2.Text = "表示テキスト";
@@ -289,10 +279,9 @@ namespace HeliMark
       this.chk表示地番.AutoSize = true;
       this.chk表示地番.Checked = true;
       this.chk表示地番.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.chk表示地番.Location = new System.Drawing.Point(10, 93);
-      this.chk表示地番.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.chk表示地番.Location = new System.Drawing.Point(6, 62);
       this.chk表示地番.Name = "chk表示地番";
-      this.chk表示地番.Size = new System.Drawing.Size(106, 22);
+      this.chk表示地番.Size = new System.Drawing.Size(72, 16);
       this.chk表示地番.TabIndex = 0;
       this.chk表示地番.Text = "表示地番";
       this.chk表示地番.UseVisualStyleBackColor = true;
@@ -301,10 +290,9 @@ namespace HeliMark
       // chk地番
       // 
       this.chk地番.AutoSize = true;
-      this.chk地番.Location = new System.Drawing.Point(170, 60);
-      this.chk地番.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.chk地番.Location = new System.Drawing.Point(102, 40);
       this.chk地番.Name = "chk地番";
-      this.chk地番.Size = new System.Drawing.Size(70, 22);
+      this.chk地番.Size = new System.Drawing.Size(48, 16);
       this.chk地番.TabIndex = 0;
       this.chk地番.Text = "地番";
       this.chk地番.UseVisualStyleBackColor = true;
@@ -313,10 +301,9 @@ namespace HeliMark
       // chk字
       // 
       this.chk字.AutoSize = true;
-      this.chk字.Location = new System.Drawing.Point(100, 60);
-      this.chk字.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.chk字.Location = new System.Drawing.Point(60, 40);
       this.chk字.Name = "chk字";
-      this.chk字.Size = new System.Drawing.Size(52, 22);
+      this.chk字.Size = new System.Drawing.Size(36, 16);
       this.chk字.TabIndex = 0;
       this.chk字.Text = "字";
       this.chk字.UseVisualStyleBackColor = true;
@@ -325,10 +312,9 @@ namespace HeliMark
       // chk大字
       // 
       this.chk大字.AutoSize = true;
-      this.chk大字.Location = new System.Drawing.Point(10, 60);
-      this.chk大字.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.chk大字.Location = new System.Drawing.Point(6, 40);
       this.chk大字.Name = "chk大字";
-      this.chk大字.Size = new System.Drawing.Size(70, 22);
+      this.chk大字.Size = new System.Drawing.Size(48, 16);
       this.chk大字.TabIndex = 0;
       this.chk大字.Text = "大字";
       this.chk大字.UseVisualStyleBackColor = true;
@@ -337,10 +323,9 @@ namespace HeliMark
       // chkid下4桁
       // 
       this.chkid下4桁.AutoSize = true;
-      this.chkid下4桁.Location = new System.Drawing.Point(10, 27);
-      this.chkid下4桁.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.chkid下4桁.Location = new System.Drawing.Point(6, 18);
       this.chkid下4桁.Name = "chkid下4桁";
-      this.chkid下4桁.Size = new System.Drawing.Size(92, 22);
+      this.chkid下4桁.Size = new System.Drawing.Size(63, 16);
       this.chkid下4桁.TabIndex = 0;
       this.chkid下4桁.Text = "id下4桁";
       this.chkid下4桁.UseVisualStyleBackColor = true;
@@ -353,11 +338,9 @@ namespace HeliMark
       this.groupBox1.Controls.Add(this.chk2回);
       this.groupBox1.Controls.Add(this.chkつや姫);
       this.groupBox1.Controls.Add(this.chk3回);
-      this.groupBox1.Location = new System.Drawing.Point(603, 56);
-      this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.groupBox1.Location = new System.Drawing.Point(362, 37);
       this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-      this.groupBox1.Size = new System.Drawing.Size(230, 202);
+      this.groupBox1.Size = new System.Drawing.Size(138, 135);
       this.groupBox1.TabIndex = 6;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "塗りつぶしマーク";
@@ -365,10 +348,9 @@ namespace HeliMark
       // chk地番データなし
       // 
       this.chk地番データなし.AutoSize = true;
-      this.chk地番データなし.Location = new System.Drawing.Point(10, 159);
-      this.chk地番データなし.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.chk地番データなし.Location = new System.Drawing.Point(6, 106);
       this.chk地番データなし.Name = "chk地番データなし";
-      this.chk地番データなし.Size = new System.Drawing.Size(181, 22);
+      this.chk地番データなし.Size = new System.Drawing.Size(123, 16);
       this.chk地番データなし.TabIndex = 0;
       this.chk地番データなし.Text = "地番データなし 白色";
       this.chk地番データなし.UseVisualStyleBackColor = true;
@@ -377,10 +359,9 @@ namespace HeliMark
       // chk申込なし
       // 
       this.chk申込なし.AutoSize = true;
-      this.chk申込なし.Location = new System.Drawing.Point(10, 126);
-      this.chk申込なし.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.chk申込なし.Location = new System.Drawing.Point(6, 84);
       this.chk申込なし.Name = "chk申込なし";
-      this.chk申込なし.Size = new System.Drawing.Size(139, 22);
+      this.chk申込なし.Size = new System.Drawing.Size(95, 16);
       this.chk申込なし.TabIndex = 0;
       this.chk申込なし.Text = "申込なし 緑色";
       this.chk申込なし.UseVisualStyleBackColor = true;
@@ -391,10 +372,9 @@ namespace HeliMark
       this.chk2回.AutoSize = true;
       this.chk2回.Checked = true;
       this.chk2回.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.chk2回.Location = new System.Drawing.Point(10, 93);
-      this.chk2回.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.chk2回.Location = new System.Drawing.Point(6, 62);
       this.chk2回.Name = "chk2回";
-      this.chk2回.Size = new System.Drawing.Size(149, 22);
+      this.chk2回.Size = new System.Drawing.Size(101, 16);
       this.chk2回.TabIndex = 0;
       this.chk2回.Text = "エサ米2回 黄色";
       this.chk2回.UseVisualStyleBackColor = true;
@@ -405,10 +385,9 @@ namespace HeliMark
       this.chkつや姫.AutoSize = true;
       this.chkつや姫.Checked = true;
       this.chkつや姫.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.chkつや姫.Location = new System.Drawing.Point(10, 60);
-      this.chkつや姫.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.chkつや姫.Location = new System.Drawing.Point(6, 40);
       this.chkつや姫.Name = "chkつや姫";
-      this.chkつや姫.Size = new System.Drawing.Size(122, 22);
+      this.chkつや姫.Size = new System.Drawing.Size(83, 16);
       this.chkつや姫.TabIndex = 0;
       this.chkつや姫.Text = "つや姫 青色";
       this.chkつや姫.UseVisualStyleBackColor = true;
@@ -419,10 +398,9 @@ namespace HeliMark
       this.chk3回.AutoSize = true;
       this.chk3回.Checked = true;
       this.chk3回.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.chk3回.Location = new System.Drawing.Point(10, 27);
-      this.chk3回.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.chk3回.Location = new System.Drawing.Point(6, 18);
       this.chk3回.Name = "chk3回";
-      this.chk3回.Size = new System.Drawing.Size(102, 22);
+      this.chk3回.Size = new System.Drawing.Size(70, 16);
       this.chk3回.TabIndex = 0;
       this.chk3回.Text = "3回 赤色";
       this.chk3回.UseVisualStyleBackColor = true;
@@ -431,19 +409,17 @@ namespace HeliMark
       // label9
       // 
       this.label9.AutoSize = true;
-      this.label9.Location = new System.Drawing.Point(10, 320);
-      this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.label9.Location = new System.Drawing.Point(6, 213);
       this.label9.Name = "label9";
-      this.label9.Size = new System.Drawing.Size(113, 18);
+      this.label9.Size = new System.Drawing.Size(77, 12);
       this.label9.TabIndex = 5;
       this.label9.Text = "mapsetting.txt";
       // 
       // btn地図画像を作る
       // 
-      this.btn地図画像を作る.Location = new System.Drawing.Point(370, 39);
-      this.btn地図画像を作る.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.btn地図画像を作る.Location = new System.Drawing.Point(222, 26);
       this.btn地図画像を作る.Name = "btn地図画像を作る";
-      this.btn地図画像を作る.Size = new System.Drawing.Size(168, 50);
+      this.btn地図画像を作る.Size = new System.Drawing.Size(101, 33);
       this.btn地図画像を作る.TabIndex = 4;
       this.btn地図画像を作る.Text = "地図画像を作る";
       this.btn地図画像を作る.UseVisualStyleBackColor = true;
@@ -467,12 +443,11 @@ namespace HeliMark
             this.右経度,
             this.下基準,
             this.下緯度});
-      this.dataGridViewMapSetting.Location = new System.Drawing.Point(10, 342);
-      this.dataGridViewMapSetting.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.dataGridViewMapSetting.Location = new System.Drawing.Point(6, 228);
       this.dataGridViewMapSetting.Name = "dataGridViewMapSetting";
       this.dataGridViewMapSetting.RowHeadersWidth = 62;
       this.dataGridViewMapSetting.RowTemplate.Height = 21;
-      this.dataGridViewMapSetting.Size = new System.Drawing.Size(1260, 314);
+      this.dataGridViewMapSetting.Size = new System.Drawing.Size(756, 209);
       this.dataGridViewMapSetting.TabIndex = 3;
       this.dataGridViewMapSetting.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
       // 
@@ -565,7 +540,7 @@ namespace HeliMark
       // listBox地区一覧
       // 
       this.listBox地区一覧.FormattingEnabled = true;
-      this.listBox地区一覧.ItemHeight = 18;
+      this.listBox地区一覧.ItemHeight = 12;
       this.listBox地区一覧.Items.AddRange(new object[] {
             "東部",
             "藤井",
@@ -575,21 +550,19 @@ namespace HeliMark
             "下吉出",
             "西部",
             "町中"});
-      this.listBox地区一覧.Location = new System.Drawing.Point(88, 90);
-      this.listBox地区一覧.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.listBox地区一覧.Location = new System.Drawing.Point(53, 60);
       this.listBox地区一覧.Name = "listBox地区一覧";
-      this.listBox地区一覧.Size = new System.Drawing.Size(229, 166);
+      this.listBox地区一覧.Size = new System.Drawing.Size(139, 112);
       this.listBox地区一覧.TabIndex = 0;
       // 
       // tabPage地図画像
       // 
       this.tabPage地図画像.Controls.Add(this.lblタブヒント);
       this.tabPage地図画像.Controls.Add(this.panelPic);
-      this.tabPage地図画像.Location = new System.Drawing.Point(4, 28);
-      this.tabPage地図画像.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.tabPage地図画像.Location = new System.Drawing.Point(4, 22);
       this.tabPage地図画像.Name = "tabPage地図画像";
-      this.tabPage地図画像.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-      this.tabPage地図画像.Size = new System.Drawing.Size(1285, 672);
+      this.tabPage地図画像.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.tabPage地図画像.Size = new System.Drawing.Size(768, 443);
       this.tabPage地図画像.TabIndex = 1;
       this.tabPage地図画像.Text = "地図画像";
       this.tabPage地図画像.UseVisualStyleBackColor = true;
@@ -597,10 +570,9 @@ namespace HeliMark
       // lblタブヒント
       // 
       this.lblタブヒント.AutoSize = true;
-      this.lblタブヒント.Location = new System.Drawing.Point(388, 642);
-      this.lblタブヒント.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.lblタブヒント.Location = new System.Drawing.Point(233, 428);
       this.lblタブヒント.Name = "lblタブヒント";
-      this.lblタブヒント.Size = new System.Drawing.Size(800, 18);
+      this.lblタブヒント.Size = new System.Drawing.Size(535, 12);
       this.lblタブヒント.TabIndex = 2;
       this.lblタブヒント.Text = "左クリック：オートスクロールとズームの切り替え / 中央クリック：オートスクロール時緯度経度コピー / 右クリック：保存";
       // 
@@ -608,16 +580,14 @@ namespace HeliMark
       // 
       this.panelPic.AutoScroll = true;
       this.panelPic.Controls.Add(this.picImg);
-      this.panelPic.Location = new System.Drawing.Point(10, 9);
-      this.panelPic.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.panelPic.Location = new System.Drawing.Point(6, 6);
       this.panelPic.Name = "panelPic";
-      this.panelPic.Size = new System.Drawing.Size(1260, 628);
+      this.panelPic.Size = new System.Drawing.Size(756, 419);
       this.panelPic.TabIndex = 1;
       // 
       // picImg
       // 
       this.picImg.Location = new System.Drawing.Point(0, 0);
-      this.picImg.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
       this.picImg.Name = "picImg";
       this.picImg.Size = new System.Drawing.Size(750, 400);
       this.picImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -630,11 +600,10 @@ namespace HeliMark
       this.tabPage印刷.Controls.Add(this.groupBox3);
       this.tabPage印刷.Controls.Add(this.btn印刷する);
       this.tabPage印刷.Controls.Add(this.printPreviewControl1);
-      this.tabPage印刷.Location = new System.Drawing.Point(4, 28);
-      this.tabPage印刷.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.tabPage印刷.Location = new System.Drawing.Point(4, 22);
       this.tabPage印刷.Name = "tabPage印刷";
-      this.tabPage印刷.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-      this.tabPage印刷.Size = new System.Drawing.Size(1285, 672);
+      this.tabPage印刷.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.tabPage印刷.Size = new System.Drawing.Size(768, 443);
       this.tabPage印刷.TabIndex = 6;
       this.tabPage印刷.Text = "印刷";
       this.tabPage印刷.UseVisualStyleBackColor = true;
@@ -646,11 +615,9 @@ namespace HeliMark
       this.groupBox3.Controls.Add(this.lbl給紙方法);
       this.groupBox3.Controls.Add(this.lblサイズ);
       this.groupBox3.Controls.Add(this.btn印刷設定);
-      this.groupBox3.Location = new System.Drawing.Point(710, 98);
-      this.groupBox3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.groupBox3.Location = new System.Drawing.Point(426, 65);
       this.groupBox3.Name = "groupBox3";
-      this.groupBox3.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-      this.groupBox3.Size = new System.Drawing.Size(453, 177);
+      this.groupBox3.Size = new System.Drawing.Size(272, 118);
       this.groupBox3.TabIndex = 2;
       this.groupBox3.TabStop = false;
       this.groupBox3.Text = "印刷設定";
@@ -658,49 +625,44 @@ namespace HeliMark
       // lbl余白
       // 
       this.lbl余白.AutoSize = true;
-      this.lbl余白.Location = new System.Drawing.Point(28, 142);
-      this.lbl余白.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.lbl余白.Location = new System.Drawing.Point(17, 95);
       this.lbl余白.Name = "lbl余白";
-      this.lbl余白.Size = new System.Drawing.Size(53, 18);
+      this.lbl余白.Size = new System.Drawing.Size(35, 12);
       this.lbl余白.TabIndex = 2;
       this.lbl余白.Text = "余白：";
       // 
       // lbl印刷方向
       // 
       this.lbl印刷方向.AutoSize = true;
-      this.lbl印刷方向.Location = new System.Drawing.Point(28, 124);
-      this.lbl印刷方向.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.lbl印刷方向.Location = new System.Drawing.Point(17, 83);
       this.lbl印刷方向.Name = "lbl印刷方向";
-      this.lbl印刷方向.Size = new System.Drawing.Size(89, 18);
+      this.lbl印刷方向.Size = new System.Drawing.Size(59, 12);
       this.lbl印刷方向.TabIndex = 2;
       this.lbl印刷方向.Text = "印刷方向：";
       // 
       // lbl給紙方法
       // 
       this.lbl給紙方法.AutoSize = true;
-      this.lbl給紙方法.Location = new System.Drawing.Point(28, 106);
-      this.lbl給紙方法.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.lbl給紙方法.Location = new System.Drawing.Point(17, 71);
       this.lbl給紙方法.Name = "lbl給紙方法";
-      this.lbl給紙方法.Size = new System.Drawing.Size(89, 18);
+      this.lbl給紙方法.Size = new System.Drawing.Size(59, 12);
       this.lbl給紙方法.TabIndex = 2;
       this.lbl給紙方法.Text = "給紙方法：";
       // 
       // lblサイズ
       // 
       this.lblサイズ.AutoSize = true;
-      this.lblサイズ.Location = new System.Drawing.Point(28, 88);
-      this.lblサイズ.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.lblサイズ.Location = new System.Drawing.Point(17, 59);
       this.lblサイズ.Name = "lblサイズ";
-      this.lblサイズ.Size = new System.Drawing.Size(60, 18);
+      this.lblサイズ.Size = new System.Drawing.Size(40, 12);
       this.lblサイズ.TabIndex = 2;
       this.lblサイズ.Text = "サイズ：";
       // 
       // btn印刷設定
       // 
-      this.btn印刷設定.Location = new System.Drawing.Point(10, 27);
-      this.btn印刷設定.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.btn印刷設定.Location = new System.Drawing.Point(6, 18);
       this.btn印刷設定.Name = "btn印刷設定";
-      this.btn印刷設定.Size = new System.Drawing.Size(193, 44);
+      this.btn印刷設定.Size = new System.Drawing.Size(116, 29);
       this.btn印刷設定.TabIndex = 1;
       this.btn印刷設定.Text = "印刷設定";
       this.btn印刷設定.UseVisualStyleBackColor = true;
@@ -708,10 +670,9 @@ namespace HeliMark
       // 
       // btn印刷する
       // 
-      this.btn印刷する.Location = new System.Drawing.Point(818, 312);
-      this.btn印刷する.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.btn印刷する.Location = new System.Drawing.Point(491, 208);
       this.btn印刷する.Name = "btn印刷する";
-      this.btn印刷する.Size = new System.Drawing.Size(193, 44);
+      this.btn印刷する.Size = new System.Drawing.Size(116, 29);
       this.btn印刷する.TabIndex = 1;
       this.btn印刷する.Text = "印刷する";
       this.btn印刷する.UseVisualStyleBackColor = true;
@@ -719,21 +680,19 @@ namespace HeliMark
       // 
       // printPreviewControl1
       // 
-      this.printPreviewControl1.Location = new System.Drawing.Point(5, 9);
-      this.printPreviewControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.printPreviewControl1.Location = new System.Drawing.Point(3, 6);
       this.printPreviewControl1.Name = "printPreviewControl1";
-      this.printPreviewControl1.Size = new System.Drawing.Size(667, 646);
+      this.printPreviewControl1.Size = new System.Drawing.Size(400, 431);
       this.printPreviewControl1.TabIndex = 0;
       // 
       // tabPage表示データ
       // 
       this.tabPage表示データ.Controls.Add(this.label2);
       this.tabPage表示データ.Controls.Add(this.dataGridView表示データ);
-      this.tabPage表示データ.Location = new System.Drawing.Point(4, 28);
-      this.tabPage表示データ.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.tabPage表示データ.Location = new System.Drawing.Point(4, 22);
       this.tabPage表示データ.Name = "tabPage表示データ";
-      this.tabPage表示データ.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-      this.tabPage表示データ.Size = new System.Drawing.Size(1285, 672);
+      this.tabPage表示データ.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.tabPage表示データ.Size = new System.Drawing.Size(768, 443);
       this.tabPage表示データ.TabIndex = 3;
       this.tabPage表示データ.Text = "表示データ";
       this.tabPage表示データ.UseVisualStyleBackColor = true;
@@ -741,10 +700,9 @@ namespace HeliMark
       // label2
       // 
       this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(10, 20);
-      this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.label2.Location = new System.Drawing.Point(6, 13);
       this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(207, 18);
+      this.label2.Size = new System.Drawing.Size(137, 12);
       this.label2.TabIndex = 2;
       this.label2.Text = "地図のマークに使用されます";
       // 
@@ -762,12 +720,11 @@ namespace HeliMark
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
-      this.dataGridView表示データ.Location = new System.Drawing.Point(5, 42);
-      this.dataGridView表示データ.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.dataGridView表示データ.Location = new System.Drawing.Point(3, 28);
       this.dataGridView表示データ.Name = "dataGridView表示データ";
       this.dataGridView表示データ.RowHeadersWidth = 62;
       this.dataGridView表示データ.RowTemplate.Height = 21;
-      this.dataGridView表示データ.Size = new System.Drawing.Size(1270, 561);
+      this.dataGridView表示データ.Size = new System.Drawing.Size(762, 374);
       this.dataGridView表示データ.TabIndex = 1;
       // 
       // dataGridViewTextBoxColumn1
@@ -854,10 +811,9 @@ namespace HeliMark
       this.tabPage全データ.Controls.Add(this.label3);
       this.tabPage全データ.Controls.Add(this.label1);
       this.tabPage全データ.Controls.Add(this.dataGridView全データ);
-      this.tabPage全データ.Location = new System.Drawing.Point(4, 28);
-      this.tabPage全データ.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.tabPage全データ.Location = new System.Drawing.Point(4, 22);
       this.tabPage全データ.Name = "tabPage全データ";
-      this.tabPage全データ.Size = new System.Drawing.Size(1285, 672);
+      this.tabPage全データ.Size = new System.Drawing.Size(768, 443);
       this.tabPage全データ.TabIndex = 2;
       this.tabPage全データ.Text = "全データ";
       this.tabPage全データ.UseVisualStyleBackColor = true;
@@ -865,20 +821,18 @@ namespace HeliMark
       // label8
       // 
       this.label8.AutoSize = true;
-      this.label8.Location = new System.Drawing.Point(5, 620);
-      this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.label8.Location = new System.Drawing.Point(3, 413);
       this.label8.Name = "label8";
-      this.label8.Size = new System.Drawing.Size(287, 18);
+      this.label8.Size = new System.Drawing.Size(191, 12);
       this.label8.TabIndex = 2;
       this.label8.Text = "100000～：重複、200000～：マークなし";
       // 
       // label7
       // 
       this.label7.AutoSize = true;
-      this.label7.Location = new System.Drawing.Point(5, 602);
-      this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.label7.Location = new System.Drawing.Point(3, 401);
       this.label7.Name = "label7";
-      this.label7.Size = new System.Drawing.Size(992, 18);
+      this.label7.Size = new System.Drawing.Size(661, 12);
       this.label7.TabIndex = 2;
       this.label7.Text = "10000～：東部、20000～：藤井、30000～：広野、40000～：野沢、50000～：上吉出、60000～：下吉出、70000～：西部、80000～：町中" +
     "";
@@ -886,10 +840,9 @@ namespace HeliMark
       // label3
       // 
       this.label3.AutoSize = true;
-      this.label3.Location = new System.Drawing.Point(5, 14);
-      this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.label3.Location = new System.Drawing.Point(3, 9);
       this.label3.Name = "label3";
-      this.label3.Size = new System.Drawing.Size(328, 18);
+      this.label3.Size = new System.Drawing.Size(219, 12);
       this.label3.TabIndex = 1;
       this.label3.Text = "全て地区と、申し込みなしを含む全てのデータ";
       this.label3.Click += new System.EventHandler(this.label1_Click);
@@ -897,10 +850,9 @@ namespace HeliMark
       // label1
       // 
       this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(930, 14);
-      this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.label1.Location = new System.Drawing.Point(558, 9);
       this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(309, 18);
+      this.label1.Size = new System.Drawing.Size(207, 12);
       this.label1.TabIndex = 1;
       this.label1.Text = "id:lat;lng;width height;deg;gislandad;c;e;m";
       this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -919,12 +871,11 @@ namespace HeliMark
             this.ckind,
             this.enable,
             this.disp});
-      this.dataGridView全データ.Location = new System.Drawing.Point(5, 36);
-      this.dataGridView全データ.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.dataGridView全データ.Location = new System.Drawing.Point(3, 24);
       this.dataGridView全データ.Name = "dataGridView全データ";
       this.dataGridView全データ.RowHeadersWidth = 62;
       this.dataGridView全データ.RowTemplate.Height = 21;
-      this.dataGridView全データ.Size = new System.Drawing.Size(1270, 561);
+      this.dataGridView全データ.Size = new System.Drawing.Size(762, 374);
       this.dataGridView全データ.TabIndex = 0;
       this.dataGridView全データ.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView全データ_CellValueChanged);
       // 
@@ -1031,21 +982,30 @@ namespace HeliMark
       this.tabPageExcelから取得.Controls.Add(this.txt地名地番重複);
       this.tabPageExcelから取得.Controls.Add(this.txt地名地番不明);
       this.tabPageExcelから取得.Controls.Add(this.txtExcelつや姫エサ米2回);
-      this.tabPageExcelから取得.Location = new System.Drawing.Point(4, 28);
-      this.tabPageExcelから取得.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.tabPageExcelから取得.Location = new System.Drawing.Point(4, 22);
       this.tabPageExcelから取得.Name = "tabPageExcelから取得";
-      this.tabPageExcelから取得.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-      this.tabPageExcelから取得.Size = new System.Drawing.Size(1285, 672);
+      this.tabPageExcelから取得.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.tabPageExcelから取得.Size = new System.Drawing.Size(768, 443);
       this.tabPageExcelから取得.TabIndex = 4;
       this.tabPageExcelから取得.Text = "Excelから取得";
       this.tabPageExcelから取得.UseVisualStyleBackColor = true;
       // 
+      // chk大豆
+      // 
+      this.chk大豆.AutoSize = true;
+      this.chk大豆.Location = new System.Drawing.Point(586, 11);
+      this.chk大豆.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.chk大豆.Name = "chk大豆";
+      this.chk大豆.Size = new System.Drawing.Size(48, 16);
+      this.chk大豆.TabIndex = 8;
+      this.chk大豆.Text = "大豆";
+      this.chk大豆.UseVisualStyleBackColor = true;
+      // 
       // btn入力クリア
       // 
-      this.btn入力クリア.Location = new System.Drawing.Point(782, 34);
-      this.btn入力クリア.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.btn入力クリア.Location = new System.Drawing.Point(469, 23);
       this.btn入力クリア.Name = "btn入力クリア";
-      this.btn入力クリア.Size = new System.Drawing.Size(157, 48);
+      this.btn入力クリア.Size = new System.Drawing.Size(94, 32);
       this.btn入力クリア.TabIndex = 7;
       this.btn入力クリア.Text = "入力クリア";
       this.btn入力クリア.UseVisualStyleBackColor = true;
@@ -1054,10 +1014,9 @@ namespace HeliMark
       // chkつや姫エサ米を無効
       // 
       this.chkつや姫エサ米を無効.AutoSize = true;
-      this.chkつや姫エサ米を無効.Location = new System.Drawing.Point(957, 318);
-      this.chkつや姫エサ米を無効.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.chkつや姫エサ米を無効.Location = new System.Drawing.Point(574, 212);
       this.chkつや姫エサ米を無効.Name = "chkつや姫エサ米を無効";
-      this.chkつや姫エサ米を無効.Size = new System.Drawing.Size(268, 22);
+      this.chkつや姫エサ米を無効.Size = new System.Drawing.Size(179, 16);
       this.chkつや姫エサ米を無効.TabIndex = 6;
       this.chkつや姫エサ米を無効.Text = "「つや姫、エサ米2回」を無効で赤";
       this.chkつや姫エサ米を無効.UseVisualStyleBackColor = true;
@@ -1068,10 +1027,9 @@ namespace HeliMark
       this.chk置換処理を行う.AutoSize = true;
       this.chk置換処理を行う.Checked = true;
       this.chk置換処理を行う.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.chk置換処理を行う.Location = new System.Drawing.Point(957, 285);
-      this.chk置換処理を行う.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.chk置換処理を行う.Location = new System.Drawing.Point(574, 190);
       this.chk置換処理を行う.Name = "chk置換処理を行う";
-      this.chk置換処理を行う.Size = new System.Drawing.Size(149, 22);
+      this.chk置換処理を行う.Size = new System.Drawing.Size(100, 16);
       this.chk置換処理を行う.TabIndex = 6;
       this.chk置換処理を行う.Text = "置換処理を行う";
       this.chk置換処理を行う.UseVisualStyleBackColor = true;
@@ -1081,10 +1039,9 @@ namespace HeliMark
       this.chk取得処理で全て処理する.AutoSize = true;
       this.chk取得処理で全て処理する.Checked = true;
       this.chk取得処理で全て処理する.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.chk取得処理で全て処理する.Location = new System.Drawing.Point(957, 252);
-      this.chk取得処理で全て処理する.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.chk取得処理で全て処理する.Location = new System.Drawing.Point(574, 168);
       this.chk取得処理で全て処理する.Name = "chk取得処理で全て処理する";
-      this.chk取得処理で全て処理する.Size = new System.Drawing.Size(218, 22);
+      this.chk取得処理で全て処理する.Size = new System.Drawing.Size(146, 16);
       this.chk取得処理で全て処理する.TabIndex = 6;
       this.chk取得処理で全て処理する.Text = "取得処理で全て処理する";
       this.chk取得処理で全て処理する.UseVisualStyleBackColor = true;
@@ -1092,10 +1049,9 @@ namespace HeliMark
       // 
       // btn申込を保存する
       // 
-      this.btn申込を保存する.Location = new System.Drawing.Point(957, 196);
-      this.btn申込を保存する.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.btn申込を保存する.Location = new System.Drawing.Point(574, 131);
       this.btn申込を保存する.Name = "btn申込を保存する";
-      this.btn申込を保存する.Size = new System.Drawing.Size(195, 46);
+      this.btn申込を保存する.Size = new System.Drawing.Size(117, 31);
       this.btn申込を保存する.TabIndex = 5;
       this.btn申込を保存する.Text = "申込を保存する";
       this.btn申込を保存する.UseVisualStyleBackColor = true;
@@ -1103,10 +1059,9 @@ namespace HeliMark
       // 
       // btn申込全てクリア
       // 
-      this.btn申込全てクリア.Location = new System.Drawing.Point(957, 87);
-      this.btn申込全てクリア.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.btn申込全てクリア.Location = new System.Drawing.Point(574, 58);
       this.btn申込全てクリア.Name = "btn申込全てクリア";
-      this.btn申込全てクリア.Size = new System.Drawing.Size(195, 45);
+      this.btn申込全てクリア.Size = new System.Drawing.Size(117, 30);
       this.btn申込全てクリア.TabIndex = 4;
       this.btn申込全てクリア.Text = "申込全てクリア";
       this.btn申込全てクリア.UseVisualStyleBackColor = true;
@@ -1114,10 +1069,9 @@ namespace HeliMark
       // 
       // btn取得処理を行う
       // 
-      this.btn取得処理を行う.Location = new System.Drawing.Point(957, 141);
-      this.btn取得処理を行う.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.btn取得処理を行う.Location = new System.Drawing.Point(574, 94);
       this.btn取得処理を行う.Name = "btn取得処理を行う";
-      this.btn取得処理を行う.Size = new System.Drawing.Size(195, 46);
+      this.btn取得処理を行う.Size = new System.Drawing.Size(117, 31);
       this.btn取得処理を行う.TabIndex = 3;
       this.btn取得処理を行う.Text = "取得処理を行う";
       this.btn取得処理を行う.UseVisualStyleBackColor = true;
@@ -1125,239 +1079,206 @@ namespace HeliMark
       // 
       // txtExcel地名地番
       // 
-      this.txtExcel地名地番.Location = new System.Drawing.Point(35, 87);
-      this.txtExcel地名地番.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.txtExcel地名地番.Location = new System.Drawing.Point(21, 58);
       this.txtExcel地名地番.MaxLength = 200000;
       this.txtExcel地名地番.Multiline = true;
       this.txtExcel地名地番.Name = "txtExcel地名地番";
       this.txtExcel地名地番.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-      this.txtExcel地名地番.Size = new System.Drawing.Size(457, 242);
+      this.txtExcel地名地番.Size = new System.Drawing.Size(276, 163);
       this.txtExcel地名地番.TabIndex = 2;
       // 
       // label6
       // 
       this.label6.AutoSize = true;
-      this.label6.Location = new System.Drawing.Point(32, 64);
-      this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.label6.Location = new System.Drawing.Point(19, 43);
       this.label6.Name = "label6";
-      this.label6.Size = new System.Drawing.Size(208, 18);
+      this.label6.Size = new System.Drawing.Size(140, 12);
       this.label6.TabIndex = 1;
       this.label6.Text = "地名地番（遊佐 沖 55など）";
       // 
       // lbl取得処理結果
       // 
       this.lbl取得処理結果.AutoSize = true;
-      this.lbl取得処理結果.Location = new System.Drawing.Point(32, 336);
-      this.lbl取得処理結果.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.lbl取得処理結果.Location = new System.Drawing.Point(19, 224);
       this.lbl取得処理結果.Name = "lbl取得処理結果";
-      this.lbl取得処理結果.Size = new System.Drawing.Size(125, 18);
+      this.lbl取得処理結果.Size = new System.Drawing.Size(83, 12);
       this.lbl取得処理結果.TabIndex = 1;
       this.lbl取得処理結果.Text = "取得処理結果：";
       // 
       // label11
       // 
       this.label11.AutoSize = true;
-      this.label11.Location = new System.Drawing.Point(628, 506);
-      this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.label11.Location = new System.Drawing.Point(377, 337);
       this.label11.Name = "label11";
-      this.label11.Size = new System.Drawing.Size(132, 18);
+      this.label11.Size = new System.Drawing.Size(88, 12);
       this.label11.TabIndex = 1;
       this.label11.Text = "合筆元データなし";
       // 
       // lbl合筆
       // 
       this.lbl合筆.AutoSize = true;
-      this.lbl合筆.Location = new System.Drawing.Point(32, 506);
-      this.lbl合筆.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.lbl合筆.Location = new System.Drawing.Point(19, 337);
       this.lbl合筆.Name = "lbl合筆";
-      this.lbl合筆.Size = new System.Drawing.Size(273, 18);
+      this.lbl合筆.Size = new System.Drawing.Size(181, 12);
       this.lbl合筆.TabIndex = 1;
       this.lbl合筆.Text = "合筆（マークデータを持たない片割れ）";
       // 
       // lblマークなし
       // 
       this.lblマークなし.AutoSize = true;
-      this.lblマークなし.Location = new System.Drawing.Point(832, 362);
-      this.lblマークなし.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.lblマークなし.Location = new System.Drawing.Point(499, 241);
       this.lblマークなし.Name = "lblマークなし";
-      this.lblマークなし.Size = new System.Drawing.Size(295, 18);
+      this.lblマークなし.Size = new System.Drawing.Size(196, 12);
       this.lblマークなし.TabIndex = 1;
       this.lblマークなし.Text = "マークなし（GISでマークがない地名地番）";
       // 
       // lbl地名地番重複
       // 
       this.lbl地名地番重複.AutoSize = true;
-      this.lbl地名地番重複.Location = new System.Drawing.Point(430, 362);
-      this.lbl地名地番重複.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.lbl地名地番重複.Location = new System.Drawing.Point(258, 241);
       this.lbl地名地番重複.Name = "lbl地名地番重複";
-      this.lbl地名地番重複.Size = new System.Drawing.Size(305, 18);
+      this.lbl地名地番重複.Size = new System.Drawing.Size(203, 12);
       this.lbl地名地番重複.TabIndex = 1;
       this.lbl地名地番重複.Text = "地名地番重複（同一地名地番2件以上）";
       // 
       // lbl地名地番不明
       // 
       this.lbl地名地番不明.AutoSize = true;
-      this.lbl地名地番不明.Location = new System.Drawing.Point(28, 362);
-      this.lbl地名地番不明.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.lbl地名地番不明.Location = new System.Drawing.Point(17, 241);
       this.lbl地名地番不明.Name = "lbl地名地番不明";
-      this.lbl地名地番不明.Size = new System.Drawing.Size(363, 18);
+      this.lbl地名地番不明.Size = new System.Drawing.Size(241, 12);
       this.lbl地名地番不明.TabIndex = 1;
       this.lbl地名地番不明.Text = "地名地番不明（[全データ]タブの地名地番にない）";
       // 
       // label5
       // 
       this.label5.AutoSize = true;
-      this.label5.Location = new System.Drawing.Point(502, 64);
-      this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.label5.Location = new System.Drawing.Point(301, 43);
       this.label5.Name = "label5";
-      this.label5.Size = new System.Drawing.Size(247, 18);
+      this.label5.Size = new System.Drawing.Size(163, 12);
       this.label5.TabIndex = 1;
       this.label5.Text = "つや姫、エサ米2回（または防除1）";
       // 
       // label4
       // 
       this.label4.AutoSize = true;
-      this.label4.Location = new System.Drawing.Point(32, 18);
-      this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.label4.Location = new System.Drawing.Point(19, 12);
       this.label4.Name = "label4";
-      this.label4.Size = new System.Drawing.Size(530, 18);
+      this.label4.Size = new System.Drawing.Size(354, 12);
       this.label4.TabIndex = 1;
       this.label4.Text = "Excelから（「つや姫」、「エサ米2回」）、（「地名地番」）を申込全件貼り付け";
       // 
       // txt合筆元データなし
       // 
-      this.txt合筆元データなし.Location = new System.Drawing.Point(632, 528);
-      this.txt合筆元データなし.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.txt合筆元データなし.Location = new System.Drawing.Point(379, 352);
       this.txt合筆元データなし.MaxLength = 300000;
       this.txt合筆元データなし.Multiline = true;
       this.txt合筆元データなし.Name = "txt合筆元データなし";
       this.txt合筆元データなし.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-      this.txt合筆元データなし.Size = new System.Drawing.Size(587, 126);
+      this.txt合筆元データなし.Size = new System.Drawing.Size(354, 85);
       this.txt合筆元データなし.TabIndex = 0;
       // 
       // txt合筆
       // 
-      this.txt合筆.Location = new System.Drawing.Point(32, 528);
-      this.txt合筆.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.txt合筆.Location = new System.Drawing.Point(19, 352);
       this.txt合筆.MaxLength = 300000;
       this.txt合筆.Multiline = true;
       this.txt合筆.Name = "txt合筆";
       this.txt合筆.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-      this.txt合筆.Size = new System.Drawing.Size(587, 126);
+      this.txt合筆.Size = new System.Drawing.Size(354, 85);
       this.txt合筆.TabIndex = 0;
       // 
       // txtマークなし
       // 
-      this.txtマークなし.Location = new System.Drawing.Point(835, 384);
-      this.txtマークなし.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.txtマークなし.Location = new System.Drawing.Point(501, 256);
       this.txtマークなし.MaxLength = 300000;
       this.txtマークなし.Multiline = true;
       this.txtマークなし.Name = "txtマークなし";
       this.txtマークなし.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-      this.txtマークなし.Size = new System.Drawing.Size(389, 109);
+      this.txtマークなし.Size = new System.Drawing.Size(235, 74);
       this.txtマークなし.TabIndex = 0;
       // 
       // txt地名地番重複
       // 
-      this.txt地名地番重複.Location = new System.Drawing.Point(433, 384);
-      this.txt地名地番重複.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.txt地名地番重複.Location = new System.Drawing.Point(260, 256);
       this.txt地名地番重複.MaxLength = 300000;
       this.txt地名地番重複.Multiline = true;
       this.txt地名地番重複.Name = "txt地名地番重複";
       this.txt地名地番重複.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-      this.txt地名地番重複.Size = new System.Drawing.Size(389, 109);
+      this.txt地名地番重複.Size = new System.Drawing.Size(235, 74);
       this.txt地名地番重複.TabIndex = 0;
       // 
       // txt地名地番不明
       // 
-      this.txt地名地番不明.Location = new System.Drawing.Point(32, 384);
-      this.txt地名地番不明.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.txt地名地番不明.Location = new System.Drawing.Point(19, 256);
       this.txt地名地番不明.MaxLength = 300000;
       this.txt地名地番不明.Multiline = true;
       this.txt地名地番不明.Name = "txt地名地番不明";
       this.txt地名地番不明.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-      this.txt地名地番不明.Size = new System.Drawing.Size(389, 109);
+      this.txt地名地番不明.Size = new System.Drawing.Size(235, 74);
       this.txt地名地番不明.TabIndex = 0;
       // 
       // txtExcelつや姫エサ米2回
       // 
-      this.txtExcelつや姫エサ米2回.Location = new System.Drawing.Point(505, 87);
-      this.txtExcelつや姫エサ米2回.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.txtExcelつや姫エサ米2回.Location = new System.Drawing.Point(303, 58);
       this.txtExcelつや姫エサ米2回.MaxLength = 200000;
       this.txtExcelつや姫エサ米2回.Multiline = true;
       this.txtExcelつや姫エサ米2回.Name = "txtExcelつや姫エサ米2回";
       this.txtExcelつや姫エサ米2回.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-      this.txtExcelつや姫エサ米2回.Size = new System.Drawing.Size(439, 242);
+      this.txtExcelつや姫エサ米2回.Size = new System.Drawing.Size(265, 163);
       this.txtExcelつや姫エサ米2回.TabIndex = 0;
       // 
       // tabPageメモ
       // 
-      this.tabPageメモ.Controls.Add(this.textBox1);
-      this.tabPageメモ.Location = new System.Drawing.Point(4, 28);
-      this.tabPageメモ.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+      this.tabPageメモ.Controls.Add(this.txtMemo);
+      this.tabPageメモ.Location = new System.Drawing.Point(4, 22);
       this.tabPageメモ.Name = "tabPageメモ";
-      this.tabPageメモ.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-      this.tabPageメモ.Size = new System.Drawing.Size(1285, 672);
+      this.tabPageメモ.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.tabPageメモ.Size = new System.Drawing.Size(768, 443);
       this.tabPageメモ.TabIndex = 5;
       this.tabPageメモ.Text = "メモ";
       this.tabPageメモ.UseVisualStyleBackColor = true;
       // 
-      // textBox1
+      // txtMemo
       // 
-      this.textBox1.Location = new System.Drawing.Point(10, 4);
-      this.textBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-      this.textBox1.MaxLength = 200000;
-      this.textBox1.Multiline = true;
-      this.textBox1.Name = "textBox1";
-      this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-      this.textBox1.Size = new System.Drawing.Size(1257, 649);
-      this.textBox1.TabIndex = 0;
+      this.txtMemo.Location = new System.Drawing.Point(6, 3);
+      this.txtMemo.MaxLength = 200000;
+      this.txtMemo.Multiline = true;
+      this.txtMemo.Name = "txtMemo";
+      this.txtMemo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+      this.txtMemo.Size = new System.Drawing.Size(756, 434);
+      this.txtMemo.TabIndex = 0;
       // 
       // lblデータフィルタ
       // 
       this.lblデータフィルタ.AutoSize = true;
-      this.lblデータフィルタ.Location = new System.Drawing.Point(23, 742);
-      this.lblデータフィルタ.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.lblデータフィルタ.Location = new System.Drawing.Point(14, 495);
       this.lblデータフィルタ.Name = "lblデータフィルタ";
-      this.lblデータフィルタ.Size = new System.Drawing.Size(117, 18);
+      this.lblデータフィルタ.Size = new System.Drawing.Size(78, 12);
       this.lblデータフィルタ.TabIndex = 2;
       this.lblデータフィルタ.Text = "データフィルタ：-";
       // 
       // label10
       // 
       this.label10.AutoSize = true;
-      this.label10.Location = new System.Drawing.Point(1110, 742);
-      this.label10.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+      this.label10.Location = new System.Drawing.Point(666, 495);
       this.label10.Name = "label10";
-      this.label10.Size = new System.Drawing.Size(190, 18);
+      this.label10.Size = new System.Drawing.Size(128, 12);
       this.label10.TabIndex = 3;
-      this.label10.Text = "Version 2.10(2023.08.02)";
+      this.label10.Text = "Version 2.11(2023.08.04)";
       // 
       // printDialog1
       // 
       this.printDialog1.UseEXDialog = true;
       // 
-      // chk大豆
-      // 
-      this.chk大豆.AutoSize = true;
-      this.chk大豆.Location = new System.Drawing.Point(977, 17);
-      this.chk大豆.Name = "chk大豆";
-      this.chk大豆.Size = new System.Drawing.Size(70, 22);
-      this.chk大豆.TabIndex = 8;
-      this.chk大豆.Text = "大豆";
-      this.chk大豆.UseVisualStyleBackColor = true;
-      // 
       // Form1
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
-      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(1333, 774);
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+      this.ClientSize = new System.Drawing.Size(800, 516);
       this.Controls.Add(this.label10);
       this.Controls.Add(this.lblデータフィルタ);
       this.Controls.Add(this.tabControl1);
-      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-      this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
       this.MaximizeBox = false;
       this.Name = "Form1";
       this.Text = "ヘリ地図作成";
@@ -1482,7 +1403,7 @@ namespace HeliMark
     private System.Windows.Forms.CheckBox chk地番データなし;
     private System.Windows.Forms.CheckBox chk地図に地区時刻表示;
     private System.Windows.Forms.TabPage tabPageメモ;
-    private System.Windows.Forms.TextBox textBox1;
+    private System.Windows.Forms.TextBox txtMemo;
     private System.Windows.Forms.Label label11;
     private System.Windows.Forms.TextBox txt合筆元データなし;
     private System.Windows.Forms.TabPage tabPage印刷;
@@ -1507,4 +1428,3 @@ namespace HeliMark
     private System.Windows.Forms.CheckBox chk大豆;
   }
 }
-
