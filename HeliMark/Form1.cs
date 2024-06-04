@@ -201,6 +201,7 @@ namespace HeliMark
         {
           string[] ss = s.Split(dem, StringSplitOptions.None);
           this.dataGridViewMapSetting.Rows.Add(ss);
+          this.listBox地区一覧.Items.Add(ss[0]); // 20240604追加
           m_mapSetting[i] = new MapSetting(ss);
           i++;
         }

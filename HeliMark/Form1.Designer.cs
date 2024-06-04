@@ -188,7 +188,7 @@ namespace HeliMark
       this.tabPageメイン.Controls.Add(this.listBox地区一覧);
       this.tabPageメイン.Location = new System.Drawing.Point(4, 22);
       this.tabPageメイン.Name = "tabPageメイン";
-      this.tabPageメイン.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.tabPageメイン.Padding = new System.Windows.Forms.Padding(3);
       this.tabPageメイン.Size = new System.Drawing.Size(768, 443);
       this.tabPageメイン.TabIndex = 0;
       this.tabPageメイン.Text = "メイン";
@@ -541,15 +541,6 @@ namespace HeliMark
       // 
       this.listBox地区一覧.FormattingEnabled = true;
       this.listBox地区一覧.ItemHeight = 12;
-      this.listBox地区一覧.Items.AddRange(new object[] {
-            "東部",
-            "藤井",
-            "広野",
-            "野沢",
-            "上吉出",
-            "下吉出",
-            "西部",
-            "町中"});
       this.listBox地区一覧.Location = new System.Drawing.Point(53, 60);
       this.listBox地区一覧.Name = "listBox地区一覧";
       this.listBox地区一覧.Size = new System.Drawing.Size(139, 112);
@@ -561,7 +552,7 @@ namespace HeliMark
       this.tabPage地図画像.Controls.Add(this.panelPic);
       this.tabPage地図画像.Location = new System.Drawing.Point(4, 22);
       this.tabPage地図画像.Name = "tabPage地図画像";
-      this.tabPage地図画像.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.tabPage地図画像.Padding = new System.Windows.Forms.Padding(3);
       this.tabPage地図画像.Size = new System.Drawing.Size(768, 443);
       this.tabPage地図画像.TabIndex = 1;
       this.tabPage地図画像.Text = "地図画像";
@@ -602,7 +593,7 @@ namespace HeliMark
       this.tabPage印刷.Controls.Add(this.printPreviewControl1);
       this.tabPage印刷.Location = new System.Drawing.Point(4, 22);
       this.tabPage印刷.Name = "tabPage印刷";
-      this.tabPage印刷.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.tabPage印刷.Padding = new System.Windows.Forms.Padding(3);
       this.tabPage印刷.Size = new System.Drawing.Size(768, 443);
       this.tabPage印刷.TabIndex = 6;
       this.tabPage印刷.Text = "印刷";
@@ -691,7 +682,7 @@ namespace HeliMark
       this.tabPage表示データ.Controls.Add(this.dataGridView表示データ);
       this.tabPage表示データ.Location = new System.Drawing.Point(4, 22);
       this.tabPage表示データ.Name = "tabPage表示データ";
-      this.tabPage表示データ.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.tabPage表示データ.Padding = new System.Windows.Forms.Padding(3);
       this.tabPage表示データ.Size = new System.Drawing.Size(768, 443);
       this.tabPage表示データ.TabIndex = 3;
       this.tabPage表示データ.Text = "表示データ";
@@ -984,7 +975,7 @@ namespace HeliMark
       this.tabPageExcelから取得.Controls.Add(this.txtExcelつや姫エサ米2回);
       this.tabPageExcelから取得.Location = new System.Drawing.Point(4, 22);
       this.tabPageExcelから取得.Name = "tabPageExcelから取得";
-      this.tabPageExcelから取得.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.tabPageExcelから取得.Padding = new System.Windows.Forms.Padding(3);
       this.tabPageExcelから取得.Size = new System.Drawing.Size(768, 443);
       this.tabPageExcelから取得.TabIndex = 4;
       this.tabPageExcelから取得.Text = "Excelから取得";
@@ -994,7 +985,7 @@ namespace HeliMark
       // 
       this.chk大豆.AutoSize = true;
       this.chk大豆.Location = new System.Drawing.Point(586, 11);
-      this.chk大豆.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.chk大豆.Margin = new System.Windows.Forms.Padding(2);
       this.chk大豆.Name = "chk大豆";
       this.chk大豆.Size = new System.Drawing.Size(48, 16);
       this.chk大豆.TabIndex = 8;
@@ -1233,7 +1224,7 @@ namespace HeliMark
       this.tabPageメモ.Controls.Add(this.txtMemo);
       this.tabPageメモ.Location = new System.Drawing.Point(4, 22);
       this.tabPageメモ.Name = "tabPageメモ";
-      this.tabPageメモ.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.tabPageメモ.Padding = new System.Windows.Forms.Padding(3);
       this.tabPageメモ.Size = new System.Drawing.Size(768, 443);
       this.tabPageメモ.TabIndex = 5;
       this.tabPageメモ.Text = "メモ";
@@ -1265,7 +1256,7 @@ namespace HeliMark
       this.label10.Name = "label10";
       this.label10.Size = new System.Drawing.Size(128, 12);
       this.label10.TabIndex = 3;
-      this.label10.Text = "Version 2.11(2023.08.04)";
+      this.label10.Text = "Version 2.12(2024.06.04)";
       // 
       // printDialog1
       // 
