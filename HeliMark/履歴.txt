@@ -1,4 +1,4 @@
-﻿2034/0604
+﻿2024/06/04
 　[listBox地区一覧]のデザイン入力を消去し、
 　Form1.csのthis.listBox地区一覧.Items.Add(ss[0]);で追加。
 
