@@ -479,7 +479,7 @@ namespace HeliMark
           {
             ;// ckind = "0";
             if (exlつやエサ=="1" || exlつやエサ == "１")
-              ckind = "2";
+              ckind = "1"; // ckind = "2"; // 20240612 ２回防除を青に変更
           }
           else if (
             exlつやエサ.StartsWith("○") ||//記号
